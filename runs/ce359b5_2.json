@@ -1,0 +1,658 @@
+{
+  "task_id": "ce359b5_2",
+  "stop": "max_llm_calls",
+  "log": [
+    {
+      "instruction": "Remove all songs from my Spotify song library and playlists that were released after 2021 year."
+    },
+    {
+      "step": 0,
+      "text": null,
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 13606,
+        "total_tokens": 13621,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 9929,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 0,
+      "call": "supervisor__show_account_passwords",
+      "args": "{}",
+      "result": "[\n {\n  \"account_name\": \"amazon\",\n  \"password\": \"cJ{*mKR\"\n },\n {\n  \"account_name\": \"file_system\",\n  \"password\": \"[yPvaoa\"\n },\n {\n  \"account_name\": \"gmail\",\n  \"password\": \"QPUtNSt\"\n },\n {\n  \"account_name\": \"phone\",\n  \"password\": \"1jBxoMe\"\n },\n {\n  \"account_name\": \"simple_note\",\n  \"password\": \"yS9BDgy\"\n },\n {\n  \"account_name\": \"splitwise\",\n  \"password\": \"J1PBdrv\"\n },\n {\n  \"account_name\": \"spotify\",\n  \"password\": \"[WlF3uN\"\n },\n {\n  \"account_name\": \"todoist\",\n  \"password\": \"[c&elXc\"\n },\n {\n  \"account_name\": \"venmo\",\n  \"password\": \"c3DP5N7\"\n }\n]\n"
+    },
+    {
+      "step": 1,
+      "text": null,
+      "usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 13881,
+        "total_tokens": 13913,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 9928,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 1,
+      "call": "spotify__login",
+      "args": "{\"username\":\"user@example.com\",\"password\":\"[WlF3uN\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__login(**{'username': 'user@example.com', 'password': '[WlF3uN'}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"Invalid credentials\"}"
+    },
+    {
+      "step": 2,
+      "text": null,
+      "usage": {
+        "completion_tokens": 12,
+        "prompt_tokens": 14018,
+        "total_tokens": 14030,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 11909,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 2,
+      "call": "supervisor__show_profile",
+      "args": "{}",
+      "result": "{\n \"first_name\": \"Jeffrey\",\n \"last_name\": \"Smith\",\n \"email\": \"jefsmith@gmail.com\",\n \"phone_number\": \"3272301258\",\n \"birthday\": \"1989-03-30\",\n \"sex\": \"male\"\n}\n"
+    },
+    {
+      "step": 3,
+      "text": null,
+      "usage": {
+        "completion_tokens": 34,
+        "prompt_tokens": 14121,
+        "total_tokens": 14155,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 11903,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 3,
+      "call": "spotify__login",
+      "args": "{\"password\":\"[WlF3uN\",\"username\":\"jefsmith@gmail.com\"}",
+      "result": "{\n \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\",\n \"token_type\": \"Bearer\"\n}\n"
+    },
+    {
+      "step": 4,
+      "text": null,
+      "usage": {
+        "completion_tokens": 130,
+        "prompt_tokens": 14291,
+        "total_tokens": 14421,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 4,
+      "call": "spotify__show_song_library",
+      "args": "{\"page_limit\":20,\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\"}",
+      "result": "[\n {\n  \"song_id\": 157,\n  \"title\": \"Chasing the Elusive Horizon\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 201,\n  \"artists\": [\n   {\n    \"id\": 13,\n    \"name\": \"Luna Starlight\"\n   }\n  ],\n  \"added_at\": \"2023-05-08T00:07:36\"\n },\n {\n  \"song_id\": 29,\n  \"title\": \"Violet Rain\",\n  \"album_id\": 6,\n  \"album_title\": \"Ethereal Rhapsody\",\n  \"duration\": 294,\n  \"artists\": [\n   {\n    \"id\": 36,\n    \"name\": \"Noah Bennett\"\n   },\n   {\n    \"id\": 19,\n    \"name\": \"Ethan Wallace\"\n   },\n   {\n    \"id\": 35,\n    \"name\": \"Nova Harmony\"\n   }\n  ],\n  \"added_at\": \"2023-05-05T12:38:49\"\n },\n {\n  \"song_id\": 240,\n  \"title\": \"Fading Memories\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 205,\n  \"artists\": [\n   {\n    \"id\": 24,\n    \"name\": \"Liam Palmer\"\n   }\n  ],\n  \"added_at\": \"2023-03-09T13:43:15\"\n },\n {\n  \"song_id\": 110,\n  \"title\": \"A Love Written in the Stars\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 268,\n  \"artists\": [\n   {\n    \"id\": 5,\n    \"name\": \"Ava Morgan\"\n   }\n  ],\n  \"added_at\": \"2022-12-19T20:59:33\"\n },\n {\n  \"song_id\": 303,\n  \"title\": \"Searching for a Lost Horizon\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 274,\n  \"artists\": [\n   {\n    \"id\": 32,\n    \"name\": \"Lucas Grey\"\n   }\n  ],\n  \"added_at\": \"2022-12-17T12:43:19\"\n },\n {\n  \"song_id\": 79,\n  \"title\": \"Fleeting Touch\",\n  \"album_id\": 17,\n  \"album_title\": \"Enchanted Melodies\",\n  \"duration\": 222,\n  \"artists\": [\n   {\n    \"id\": 12,\n    \"name\": \"Mia Sullivan\"\n   },\n   {\n    \"id\": 27,\n    \"name\": \"Carter Knight\"\n   }\n  ],\n  \"added_at\": \"2022-12-15T17:48:33\"\n },\n {\n  \"song_id\": 98,\n  \"title\": \"Chasing Echoes in the Rain\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 261,\n  \"artists\": [\n   {\n    \"id\": 3,\n    \"name\": \"Jasper Skye\"\n   }\n  ],\n  \"added_at\": \"2022-10-13T03:22:46\"\n },\n {\n  \"song_id\": 81,\n  \"title\": \"Echoes of the Whispering Wind\",\n  \"album_id\": 18,\n  \"album_title\": \"Echoes of Eternity\",\n  \"duration\": 217,\n  \"artists\": [\n   {\n    \"id\": 33,\n    \"name\": \"Felix Blackwood\"\n   }\n  ],\n  \"added_at\": \"2022-10-01T23:34:56\"\n },\n {\n  \"song_id\": 196,\n  \"title\": \"Falling Through the Cracks of Time\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 278,\n  \"artists\": [\n   {\n    \"id\": 18,\n    \"name\": \"Astrid Nightshade\"\n   }\n  ],\n  \"added_at\": \"2022-09-01T06:02:44\"\n },\n {\n  \"song_id\": 289,\n  \"title\": \"Wasted Promises\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 258,\n  \"artists\": [\n   {\n    \"id\": 31,\n    \"name\": \"Hazel Winter\"\n   }\n  ],\n  \"added_at\": \"2022-08-07T20:46:53\"\n },\n {\n  \"song_id\": 236,\n  \"title\": \"A Portrait of Love Unrequited\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 250,\n  \"artists\": [\n   {\n    \"id\": 24,\n    \"name\": \"Liam Palmer\"\n   }\n  ],\n  \"added_at\": \"2022-08-06T17:24:16\"\n },\n {\n  \"song_id\": 28,\n  \"title\": \"Invisible Lines\",\n  \"album_id\": 5,\n  \"album_title\": \"Velvet Shadows\",\n  \"duration\": 199,\n  \"artists\": [\n   {\n    \"id\": 32,\n    \"name\": \"Lucas Grey\"\n   },\n   {\n    \"id\": 25,\n    \"name\": \"Velvet Echo\"\n   }\n  ],\n  \"added_at\": \"2022-07-18T17:31:07\"\n },\n {\n  \"song_id\": 53,\n  \"title\": \"Unearthed Secrets\",\n  \"album_id\": 10,\n  \"album_title\": \"Dreamscape Delights\",\n  \"duration\": 231,\n  \"artists\": [\n   {\n    \"id\": 8,\n    \"name\": \"Aria Sterling\"\n   }\n  ],\n  \"added_at\": \"2022-06-21T10:02:27\"\n },\n {\n  \"song_id\": 230,\n  \"title\": \"The Mirage of a Perfect Life\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 206,\n  \"artists\": [\n   {\n    \"id\": 23,\n    \"name\": \"Soulful Reverie\"\n   }\n  ],\n  \"added_at\": \"2022-06-21T07:32:04\"\n },\n {\n  \"song_id\": 182,\n  \"title\": \"Melodies of the Forgotten Past\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 282,\n  \"artists\": [\n   {\n    \"id\": 16,\n    \"name\": \"Apollo Serenade\"\n   }\n  ],\n  \"added_at\": \"2022-06-16T18:30:52\"\n },\n {\n  \"song_id\": 124,\n  \"title\": \"Drowning Sorrows\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 241,\n  \"artists\": [\n   {\n    \"id\": 8,\n    \"name\": \"Aria Sterling\"\n   }\n  ],\n  \"added_at\": \"2022-05-25T02:44:30\"\n },\n {\n  \"song_id\": 33,\n  \"title\": \"Unveiled\",\n  \"album_id\": 7,\n  \"album_title\": \"Vibrant Visions\",\n  \"duration\": 238,\n  \"artists\": [\n   {\n    \"id\": 11,\n    \"name\": \"Eliana Harper\"\n   }\n  ],\n  \"added_at\": \"2022-05-21T01:57:28\"\n }\n]\n"
+    },
+    {
+      "step": 5,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 16554,
+        "total_tokens": 16574,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 13935,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 5,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":157}",
+      "result": "{\n \"song_id\": 157,\n \"title\": \"Chasing the Elusive Horizon\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 201,\n \"artists\": [\n  {\n   \"id\": 13,\n   \"name\": \"Luna Starlight\",\n   \"genre\": \"reggae\",\n   \"follower_count\": 22\n  }\n ],\n \"release_date\": \"2023-02-02T00:27:34\",\n \"genre\": \"reggae\",\n \"play_count\": 308,\n \"rating\": 0.0,\n \"like_count\": 4,\n \"review_count\": 0,\n \"shareable_link\": \"https://spotify.com/songs/157\"\n}\n"
+    },
+    {
+      "step": 6,
+      "text": null,
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 16787,
+        "total_tokens": 16806,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 6,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":29}",
+      "result": "{\n \"song_id\": 29,\n \"title\": \"Violet Rain\",\n \"album_id\": 6,\n \"album_title\": \"Ethereal Rhapsody\",\n \"duration\": 294,\n \"artists\": [\n  {\n   \"id\": 36,\n   \"name\": \"Noah Bennett\",\n   \"genre\": \"indie\",\n   \"follower_count\": 20\n  },\n  {\n   \"id\": 19,\n   \"name\": \"Ethan Wallace\",\n   \"genre\": \"indie\",\n   \"follower_count\": 21\n  },\n  {\n   \"id\": 35,\n   \"name\": \"Nova Harmony\",\n   \"genre\": \"indie\",\n   \"follower_count\": 19\n  }\n ],\n \"release_date\": \"2021-04-02T04:32:45\",\n \"genre\": \"indie\",\n \"play_count\": 265,\n \"rating\": 3.5,\n \"like_count\": 14,\n \"review_count\": 2,\n \"shareable_link\": \"https://spotify.com/songs/29\"\n}\n"
+    },
+    {
+      "step": 7,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 17103,
+        "total_tokens": 17123,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 7,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":240}",
+      "result": "{\n \"song_id\": 240,\n \"title\": \"Fading Memories\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 205,\n \"artists\": [\n  {\n   \"id\": 24,\n   \"name\": \"Liam Palmer\",\n   \"genre\": \"country\",\n   \"follower_count\": 20\n  }\n ],\n \"release_date\": \"2021-09-15T02:47:01\",\n \"genre\": \"country\",\n \"play_count\": 823,\n \"rating\": 4.0,\n \"like_count\": 4,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/240\"\n}\n"
+    },
+    {
+      "step": 8,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 17328,
+        "total_tokens": 17348,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 8,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":110}",
+      "result": "{\n \"song_id\": 110,\n \"title\": \"A Love Written in the Stars\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 268,\n \"artists\": [\n  {\n   \"id\": 5,\n   \"name\": \"Ava Morgan\",\n   \"genre\": \"EDM\",\n   \"follower_count\": 19\n  }\n ],\n \"release_date\": \"2019-06-20T09:41:43\",\n \"genre\": \"EDM\",\n \"play_count\": 531,\n \"rating\": 3.0,\n \"like_count\": 6,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/110\"\n}\n"
+    },
+    {
+      "step": 9,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 17557,
+        "total_tokens": 17577,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 9,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":303}",
+      "result": "{\n \"song_id\": 303,\n \"title\": \"Searching for a Lost Horizon\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 274,\n \"artists\": [\n  {\n   \"id\": 32,\n   \"name\": \"Lucas Grey\",\n   \"genre\": \"R&B\",\n   \"follower_count\": 16\n  }\n ],\n \"release_date\": \"2021-02-17T13:36:32\",\n \"genre\": \"R&B\",\n \"play_count\": 443,\n \"rating\": 2.0,\n \"like_count\": 5,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/303\"\n}\n"
+    },
+    {
+      "step": 10,
+      "text": null,
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 17788,
+        "total_tokens": 17807,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 10,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":79}",
+      "result": "{\n \"song_id\": 79,\n \"title\": \"Fleeting Touch\",\n \"album_id\": 17,\n \"album_title\": \"Enchanted Melodies\",\n \"duration\": 222,\n \"artists\": [\n  {\n   \"id\": 12,\n   \"name\": \"Mia Sullivan\",\n   \"genre\": \"classical\",\n   \"follower_count\": 16\n  },\n  {\n   \"id\": 27,\n   \"name\": \"Carter Knight\",\n   \"genre\": \"classical\",\n   \"follower_count\": 19\n  }\n ],\n \"release_date\": \"2020-10-15T13:57:09\",\n \"genre\": \"classical\",\n \"play_count\": 126,\n \"rating\": 0.0,\n \"like_count\": 11,\n \"review_count\": 0,\n \"shareable_link\": \"https://spotify.com/songs/79\"\n}\n"
+    },
+    {
+      "step": 11,
+      "text": null,
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 18059,
+        "total_tokens": 18078,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 15911,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 11,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":98}",
+      "result": "{\n \"song_id\": 98,\n \"title\": \"Chasing Echoes in the Rain\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 261,\n \"artists\": [\n  {\n   \"id\": 3,\n   \"name\": \"Jasper Skye\",\n   \"genre\": \"EDM\",\n   \"follower_count\": 23\n  }\n ],\n \"release_date\": \"2019-12-24T14:32:42\",\n \"genre\": \"EDM\",\n \"play_count\": 881,\n \"rating\": 3.5,\n \"like_count\": 5,\n \"review_count\": 2,\n \"shareable_link\": \"https://spotify.com/songs/98\"\n}\n"
+    },
+    {
+      "step": 12,
+      "text": null,
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 18286,
+        "total_tokens": 18305,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 15908,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 12,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":81}",
+      "result": "{\n \"song_id\": 81,\n \"title\": \"Echoes of the Whispering Wind\",\n \"album_id\": 18,\n \"album_title\": \"Echoes of Eternity\",\n \"duration\": 217,\n \"artists\": [\n  {\n   \"id\": 33,\n   \"name\": \"Felix Blackwood\",\n   \"genre\": \"classical\",\n   \"follower_count\": 18\n  }\n ],\n \"release_date\": \"2022-07-06T10:24:33\",\n \"genre\": \"classical\",\n \"play_count\": 645,\n \"rating\": 2.0,\n \"like_count\": 17,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/81\"\n}\n"
+    },
+    {
+      "step": 13,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 18520,
+        "total_tokens": 18540,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 15906,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 13,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":196}",
+      "result": "{\n \"song_id\": 196,\n \"title\": \"Falling Through the Cracks of Time\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 278,\n \"artists\": [\n  {\n   \"id\": 18,\n   \"name\": \"Astrid Nightshade\",\n   \"genre\": \"reggae\",\n   \"follower_count\": 18\n  }\n ],\n \"release_date\": \"2020-07-29T17:06:15\",\n \"genre\": \"reggae\",\n \"play_count\": 949,\n \"rating\": 0.0,\n \"like_count\": 11,\n \"review_count\": 0,\n \"shareable_link\": \"https://spotify.com/songs/196\"\n}\n"
+    },
+    {
+      "step": 14,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 18756,
+        "total_tokens": 18776,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 15904,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 14,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":289}",
+      "result": "{\n \"song_id\": 289,\n \"title\": \"Wasted Promises\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 258,\n \"artists\": [\n  {\n   \"id\": 31,\n   \"name\": \"Hazel Winter\",\n   \"genre\": \"EDM\",\n   \"follower_count\": 20\n  }\n ],\n \"release_date\": \"2019-08-30T00:48:51\",\n \"genre\": \"EDM\",\n \"play_count\": 211,\n \"rating\": 3.0,\n \"like_count\": 4,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/289\"\n}\n"
+    },
+    {
+      "step": 15,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 18983,
+        "total_tokens": 19003,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 15901,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 15,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":236}",
+      "result": "{\n \"song_id\": 236,\n \"title\": \"A Portrait of Love Unrequited\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 250,\n \"artists\": [\n  {\n   \"id\": 24,\n   \"name\": \"Liam Palmer\",\n   \"genre\": \"country\",\n   \"follower_count\": 20\n  }\n ],\n \"release_date\": \"2022-08-20T08:17:08\",\n \"genre\": \"country\",\n \"play_count\": 414,\n \"rating\": 3.0,\n \"like_count\": 8,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/236\"\n}\n"
+    },
+    {
+      "step": 16,
+      "text": null,
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 19212,
+        "total_tokens": 19231,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 11924,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 16,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":28}",
+      "result": "{\n \"song_id\": 28,\n \"title\": \"Invisible Lines\",\n \"album_id\": 5,\n \"album_title\": \"Velvet Shadows\",\n \"duration\": 199,\n \"artists\": [\n  {\n   \"id\": 32,\n   \"name\": \"Lucas Grey\",\n   \"genre\": \"R&B\",\n   \"follower_count\": 16\n  },\n  {\n   \"id\": 25,\n   \"name\": \"Velvet Echo\",\n   \"genre\": \"R&B\",\n   \"follower_count\": 22\n  }\n ],\n \"release_date\": \"2022-07-15T17:46:36\",\n \"genre\": \"R&B\",\n \"play_count\": 110,\n \"rating\": 4.0,\n \"like_count\": 12,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/28\"\n}\n"
+    },
+    {
+      "step": 17,
+      "text": null,
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 19487,
+        "total_tokens": 19506,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 15897,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 17,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":53}",
+      "result": "{\n \"song_id\": 53,\n \"title\": \"Unearthed Secrets\",\n \"album_id\": 10,\n \"album_title\": \"Dreamscape Delights\",\n \"duration\": 231,\n \"artists\": [\n  {\n   \"id\": 8,\n   \"name\": \"Aria Sterling\",\n   \"genre\": \"jazz\",\n   \"follower_count\": 21\n  }\n ],\n \"release_date\": \"2022-11-11T09:54:16\",\n \"genre\": \"jazz\",\n \"play_count\": 648,\n \"rating\": 2.0,\n \"like_count\": 9,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/53\"\n}\n"
+    },
+    {
+      "step": 18,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 19715,
+        "total_tokens": 19735,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 15895,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 18,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":230}",
+      "result": "{\n \"song_id\": 230,\n \"title\": \"The Mirage of a Perfect Life\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 206,\n \"artists\": [\n  {\n   \"id\": 23,\n   \"name\": \"Soulful Reverie\",\n   \"genre\": \"R&B\",\n   \"follower_count\": 16\n  }\n ],\n \"release_date\": \"2020-11-06T10:00:03\",\n \"genre\": \"R&B\",\n \"play_count\": 660,\n \"rating\": 3.0,\n \"like_count\": 9,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/230\"\n}\n"
+    },
+    {
+      "step": 19,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 19949,
+        "total_tokens": 19969,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17879,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 19,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":182}",
+      "result": "{\n \"song_id\": 182,\n \"title\": \"Melodies of the Forgotten Past\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 282,\n \"artists\": [\n  {\n   \"id\": 16,\n   \"name\": \"Apollo Serenade\",\n   \"genre\": \"R&B\",\n   \"follower_count\": 22\n  }\n ],\n \"release_date\": \"2022-03-16T10:58:17\",\n \"genre\": \"R&B\",\n \"play_count\": 314,\n \"rating\": 0.0,\n \"like_count\": 5,\n \"review_count\": 0,\n \"shareable_link\": \"https://spotify.com/songs/182\"\n}\n"
+    },
+    {
+      "step": 20,
+      "text": null,
+      "usage": {
+        "completion_tokens": 20,
+        "prompt_tokens": 20182,
+        "total_tokens": 20202,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17877,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 20,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":124}",
+      "result": "{\n \"song_id\": 124,\n \"title\": \"Drowning Sorrows\",\n \"album_id\": null,\n \"album_title\": null,\n \"duration\": 241,\n \"artists\": [\n  {\n   \"id\": 8,\n   \"name\": \"Aria Sterling\",\n   \"genre\": \"jazz\",\n   \"follower_count\": 21\n  }\n ],\n \"release_date\": \"2022-07-16T12:24:44\",\n \"genre\": \"jazz\",\n \"play_count\": 316,\n \"rating\": 3.0,\n \"like_count\": 2,\n \"review_count\": 1,\n \"shareable_link\": \"https://spotify.com/songs/124\"\n}\n"
+    },
+    {
+      "step": 21,
+      "text": null,
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 20408,
+        "total_tokens": 20427,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17874,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 21,
+      "call": "spotify__show_song",
+      "args": "{\"song_id\":33}",
+      "result": "{\n \"song_id\": 33,\n \"title\": \"Unveiled\",\n \"album_id\": 7,\n \"album_title\": \"Vibrant Visions\",\n \"duration\": 238,\n \"artists\": [\n  {\n   \"id\": 11,\n   \"name\": \"Eliana Harper\",\n   \"genre\": \"hip-hop\",\n   \"follower_count\": 28\n  }\n ],\n \"release_date\": \"2021-02-05T04:10:20\",\n \"genre\": \"hip-hop\",\n \"play_count\": 809,\n \"rating\": 2.0,\n \"like_count\": 12,\n \"review_count\": 2,\n \"shareable_link\": \"https://spotify.com/songs/33\"\n}\n"
+    },
+    {
+      "step": 22,
+      "text": null,
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 20640,
+        "total_tokens": 20773,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17872,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 22,
+      "call": "spotify__remove_song_from_library",
+      "args": "{\"song_id\":157,\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 23,
+      "text": null,
+      "usage": {
+        "completion_tokens": 132,
+        "prompt_tokens": 20803,
+        "total_tokens": 20935,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17868,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 23,
+      "call": "spotify__remove_song_from_library",
+      "args": "{\"song_id\":81,\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 24,
+      "text": null,
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 20965,
+        "total_tokens": 21098,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17864,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 24,
+      "call": "spotify__remove_song_from_library",
+      "args": "{\"song_id\":236,\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 25,
+      "text": null,
+      "usage": {
+        "completion_tokens": 132,
+        "prompt_tokens": 21128,
+        "total_tokens": 21260,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17860,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 25,
+      "call": "spotify__remove_song_from_library",
+      "args": "{\"song_id\":28,\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 26,
+      "text": null,
+      "usage": {
+        "completion_tokens": 132,
+        "prompt_tokens": 21290,
+        "total_tokens": 21422,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17856,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 26,
+      "call": "spotify__remove_song_from_library",
+      "args": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\",\"song_id\":53}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 27,
+      "text": null,
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 21452,
+        "total_tokens": 21585,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 27,
+      "call": "spotify__remove_song_from_library",
+      "args": "{\"song_id\":182,\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 28,
+      "text": null,
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 21615,
+        "total_tokens": 21748,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17849,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 28,
+      "call": "spotify__remove_song_from_library",
+      "args": "{\"song_id\":124,\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 29,
+      "text": null,
+      "usage": {
+        "completion_tokens": 123,
+        "prompt_tokens": 21778,
+        "total_tokens": 21901,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 17845,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 29,
+      "call": "spotify__show_playlist_library",
+      "args": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2plZnNtaXRoQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.3UhLpWF_CQcYGd3ojC0KjVUVYCXODuz_TMAUuVLQB5E\"}",
+      "result": "[\n {\n  \"playlist_id\": 409,\n  \"title\": \"Desert Drift: Nomadic Tunes\",\n  \"is_public\": false,\n  \"rating\": 0.0,\n  \"like_count\": 0,\n  \"review_count\": 0,\n  \"owner\": {\n   \"name\": \"Jeffrey Smith\",\n   \"email\": \"jefsmith@gmail.com\"\n  },\n  \"created_at\": \"2023-04-11T14:21:48\",\n  \"song_ids\": [\n   8,\n   65,\n   88,\n   106,\n   158,\n   174,\n   204,\n   244,\n   296\n  ]\n },\n {\n  \"playlist_id\": 403,\n  \"title\": \"Groove Galaxy: Funk & Soul\",\n  \"is_public\": false,\n  \"rating\": 0.0,\n  \"like_count\": 1,\n  \"review_count\": 0,\n  \"owner\": {\n   \"name\": \"Jeffrey Smith\",\n   \"email\": \"jefsmith@gmail.com\"\n  },\n  \"created_at\": \"2023-03-19T16:46:00\",\n  \"song_ids\": [\n   57,\n   62,\n   152,\n   210,\n   276,\n   322\n  ]\n },\n {\n  \"playlist_id\": 406,\n  \"title\": \"Ethereal Escapes: Ambient Grooves\",\n  \"is_public\": false,\n  \"rating\": 0.0,\n  \"like_count\": 1,\n  \"review_count\": 0,\n  \"owner\": {\n   \"name\": \"Jeffrey Smith\",\n   \"email\": \"jefsmith@gmail.com\"\n  },\n  \"created_at\": \"2023-03-16T00:24:34\",\n  \"song_ids\": [\n   89,\n   111,\n   144,\n   151,\n   167,\n   196,\n   267,\n   277\n  ]\n },\n {\n  \"playlist_id\": 407,\n  \"title\": \"October Feels: Autumn Aesthetics\",\n  \"is_public\": false,\n  \"rating\": 0.0,\n  \"like_count\": 0,\n  \"review_count\": 0,\n  \"owner\": {\n   \"name\": \"Jeffrey Smith\",\n   \"email\": \"jefsmith@gmail.com\"\n  },\n  \"created_at\": \"2023-01-19T18:50:22\",\n  \"song_ids\": [\n   4,\n   63,\n   67,\n   84,\n   116,\n   221,\n   235,\n   292,\n   299\n  ]\n },\n {\n  \"playlist_id\": 402,\n  \"title\": \"Urban Jazz Fusion\",\n  \"is_public\": false,\n  \"rating\": 0.0,\n  \"like_count\": 0,\n  \"review_count\": 0,\n  \"owner\": {\n   \"name\": \"Jeffrey Smith\",\n   \"email\": \"jefsmith@gmail.com\"\n  },\n  \"created_at\": \"2023-01-17T12:47:39\",\n  \"song_ids\": [\n   56,\n   101,\n   153,\n   271,\n   303\n  ]\n }\n]\n"
+    }
+  ],
+  "report": "<appworld.evaluator.TestTracker object at 0x7fd08819e3d0>"
+}

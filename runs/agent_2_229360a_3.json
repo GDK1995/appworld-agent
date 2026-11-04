@@ -1,0 +1,911 @@
+{
+  "task_id": "229360a_3",
+  "stop": "completed",
+  "log": [
+    {
+      "instruction": "I need to cleanup my Spotify libraries. Keep only those songs and albums in my song and album library, respectively, that I have liked or downloaded, and remove the rest. An album is downloaded if all songs in it are downloaded. Keep my playlist library as is for now."
+    },
+    {
+      "step": 0,
+      "text": null,
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 636,
+        "total_tokens": 654,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 0,
+      "call": "app_func_list",
+      "args": "{\"app\":\"spotify\"}",
+      "result": "spotify__show_account: Show your account information. Unlike show_profile, this includes private information.\nspotify__signup: Sign up to create account.\nspotify__delete_account: Delete your account.\nspotify__update_account_name: Update your first or last name in the account profile.\nspotify__login: Login to your account.\nspotify__logout: Logout from your account.\nspotify__send_verification_code: Send account verification code to your email address.\nspotify__verify_account: Verify your account using the verification code sent to your email address.\nspotify__send_password_reset_code: Send password reset code to your email address.\nspotify__reset_password: Reset your password using the password reset code sent to your email address.\nspotify__show_profile: Show public profile information of a user.\nspotify__search_users: Search users by name or email address.\nspotify__show_genres: Show the list of all music genres.\nspotify__search_songs: Search for songs with a query.\nspotify__show_song: Get details of a specific song.\nspotify__show_song_privates: Show information about the song that is private to the user.\nspotify__like_song: Like a song.\nspotify__unlike_song: Unlike a song.\nspotify__show_liked_songs: Get a list of songs you have liked.\nspotify__search_albums: Search for albums with a query.\nspotify__show_album: Get details of a specific album.\nspotify__show_album_privates: Show information about the album that is private to the user.\nspotify__like_album: Like a album.\nspotify__unlike_album: Unlike a album.\nspotify__show_liked_albums: Get a list of albums you have liked.\nspotify__show_playlist_library: Search or show a list of playlists in your playlist library.\nspotify__search_playlists: Search for playlists with a query. It will search over all public playlists and your own private playlists. If the access token is not provided, it will only search public playlists.\nspotify__create_playlist: Create a new playlist.\nspotify__show_playlist: Get detailed information about a specific playlist. You can view your own playlists or others' playlists if they are public.\nspotify__update_playlist: Update a playlist title or privacy.\nspotify__delete_playlist: Delete a playlist.\nspotify__show_playlist_privates: Show information about the playlist that is private to the user.\nspotify__like_playlist: Like a playlist.\nspotify__unlike_playlist: Unlike a playlist.\nspotify__show_liked_playlists: Get a list of playlists you have liked.\nspotify__search_artists: Search for artists with a query.\nspotify__show_artist: Get details of a specific artist.\nspotify__show_artist_following: Show if the user is following the artist.\nspotify__show_song_library: Search or show a list of songs in your song library.\nspotify__add_song_to_library: Add a song to your song library.\nspotify__remove_song_from_library: Remove a song from your song library.\nspotify__show_album_library: Search or show a list of albums in your album library.\nspotify__add_album_to_library: Add an album to your album library.\nspotify__remove_album_from_library: Remove an album from your album library.\nspotify__add_song_to_playlist: Add a song to a playlist.\nspotify__remove_song_from_playlist: Remove a song from a playlist.\nspotify__show_downloaded_songs: Search or show a list of your downloaded songs.\nspotify__download_song: Download a song.\nspotify__remove_downloaded_song: Remove a song from downloads.\nspotify__show_following_artists: Search or show a list of artists you are following.\nspotify__follow_artist: Follow an artist.\nspotify__unfollow_artist: Unfollow an artist.\nspotify__show_song_reviews: Search or show a list of reviews for a song.\nspotify__review_song: Rate or review a song.\nspotify__update_song_review: Update a song review.\nspotify__delete_song_review: Delete a song review.\nspotify__show_song_review: Show a song review.\nspotify__show_album_reviews: Search or show a list of reviews for an album.\nspotify__review_album: Rate or review an album.\nspotify__update_album_review: Update an album review.\nspotify__delete_album_review: Delete an album review.\nspotify__show_album_review: Show an album review.\nspotify__show_playlist_reviews: Search or show a list of reviews for your playlist or others' public playlist.\nspotify__review_playlist: Rate or review a playlist.\nspotify__update_playlist_review: Update a playlist review.\nspotify__delete_playlist_review: Delete a playlist review.\nspotify__show_playlist_review: Show a playlist review.\nspotify__show_payment_cards: Get a list of users payment cards.\nspotify__add_payment_card: Add a new payment card.\nspotify__show_payment_card: Get details of a payment card.\nspotify__update_payment_card: Update payment card information.\nspotify__delete_payment_card: Delete payment card information.\nspotify__show_current_song: Show details of the current song on the queue.\nspotify__play_music: Play music based on various criteria. You can pass, at most, any one of queue_position, song_id, album_id or playlist_id. If one of song_id, album_id or playlist_id is passed, that song, album or playlist will be added to the queue and played. Otherwise, the queue will remain unchanged. If queue_position is passed, the song at that position in the queue will be played. If none is passed, the current song in the queue will be played.\nspotify__pause_music: Pause the currently playing song.\nspotify__previous_song: Go to the previous song in the song queue.\nspotify__next_song: Go to the next song in the song queue.\nspotify__move_song_in_queue: Move a song in the queue to a new position.\nspotify__seek_song: Seek the current song to the given number of seconds.\nspotify__loop_song: Set whether to loop the current song.\nspotify__shuffle_song_queue: Shuffle songs in the music player queue.\nspotify__show_song_queue: Get the music player song queue. Songs are played in the order of the queue in a cycle.\nspotify__add_to_queue: Add a song, album or playlist to the music player song queue.\nspotify__clear_song_queue: Clear the music player song queue.\nspotify__remove_song_from_queue: Remove a song at the given position from the music player song queue.\nspotify__show_volume: Get the volume level of the music player.\nspotify__set_volume: Set the volume level of the music player.\nspotify__show_recommendations: Get personalized song recommendations for the user.\nspotify__show_premium_plans: Show information about premium plans available.\nspotify__subscribe_premium: Subscribe to premium membership.\nspotify__show_premium_subscriptions: Show your premium subscription history.\nspotify__download_premium_subscription_receipt: Download the receipt for a premium subscription."
+    },
+    {
+      "step": 1,
+      "text": null,
+      "usage": {
+        "completion_tokens": 141,
+        "prompt_tokens": 2300,
+        "total_tokens": 2441,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 1,
+      "call": "call_function",
+      "args": "{\"args\":\"{}\",\"name\":\"spotify__show_song_library\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_song_library(**{}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"You are either not authorized to access this spotify API endpoint or your access token is missing, invalid or expired.\"}"
+    },
+    {
+      "step": 1,
+      "call": "call_function",
+      "args": "{\"args\":\"{}\",\"name\":\"spotify__show_liked_songs\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_liked_songs(**{}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"You are either not authorized to access this spotify API endpoint or your access token is missing, invalid or expired.\"}"
+    },
+    {
+      "step": 1,
+      "call": "call_function",
+      "args": "{\"args\":\"{}\",\"name\":\"spotify__show_downloaded_songs\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_downloaded_songs(**{}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"You are either not authorized to access this spotify API endpoint or your access token is missing, invalid or expired.\"}"
+    },
+    {
+      "step": 1,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_album_library\",\"args\":\"{}\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_album_library(**{}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"You are either not authorized to access this spotify API endpoint or your access token is missing, invalid or expired.\"}"
+    },
+    {
+      "step": 1,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_liked_albums\",\"args\":\"{}\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_liked_albums(**{}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"You are either not authorized to access this spotify API endpoint or your access token is missing, invalid or expired.\"}"
+    },
+    {
+      "step": 2,
+      "text": null,
+      "usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 2931,
+        "total_tokens": 2957,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 2,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_account\",\"args\":\"{}\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_account(**{}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"You are either not authorized to access this spotify API endpoint or your access token is missing, invalid or expired.\"}"
+    },
+    {
+      "step": 3,
+      "text": null,
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 3053,
+        "total_tokens": 3071,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 3,
+      "call": "app_func_list",
+      "args": "{\"app\":\"supervisor\"}",
+      "result": "supervisor__show_active_task: Show the currently active task assigned to you by the supervisor.\nsupervisor__complete_task: Mark the currently active task as complete with the given answer.\nsupervisor__show_profile: Show your supervisor's profile information.\nsupervisor__show_addresses: Show your supervisor's addresses.\nsupervisor__show_payment_cards: Show your supervisor's payment_cards.\nsupervisor__show_account_passwords: Show your supervisor's app account passwords."
+    },
+    {
+      "step": 4,
+      "text": null,
+      "usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 3191,
+        "total_tokens": 3220,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 4,
+      "call": "call_function",
+      "args": "{\"name\":\"supervisor__show_account_passwords\",\"args\":\"{}\"}",
+      "result": "[\n {\n  \"account_name\": \"amazon\",\n  \"password\": \"EfWDm1a\"\n },\n {\n  \"account_name\": \"file_system\",\n  \"password\": \"mv-l]Ud\"\n },\n {\n  \"account_name\": \"gmail\",\n  \"password\": \"-Uf_)OB\"\n },\n {\n  \"account_name\": \"phone\",\n  \"password\": \"b4GXZH6\"\n },\n {\n  \"account_name\": \"simple_note\",\n  \"password\": \"g{WPN$i\"\n },\n {\n  \"account_name\": \"splitwise\",\n  \"password\": \"+xGGeSF\"\n },\n {\n  \"account_name\": \"spotify\",\n  \"password\": \"rvP5MvY\"\n },\n {\n  \"account_name\": \"todoist\",\n  \"password\": \"Ibi7M7b\"\n },\n {\n  \"account_name\": \"venmo\",\n  \"password\": \"uNK8[nt\"\n }\n]\n"
+    },
+    {
+      "step": 5,
+      "text": null,
+      "usage": {
+        "completion_tokens": 37,
+        "prompt_tokens": 3480,
+        "total_tokens": 3517,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 5,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__login\",\"args\":\"{\\\"password\\\":\\\"rvP5MvY\\\",\\\"username\\\":\\\"user\\\"}\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__login(**{'password': 'rvP5MvY', 'username': 'user'}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"Invalid credentials\"}"
+    },
+    {
+      "step": 6,
+      "text": null,
+      "usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 3615,
+        "total_tokens": 3641,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 6,
+      "call": "call_function",
+      "args": "{\"name\":\"supervisor__show_profile\",\"args\":\"{}\"}",
+      "result": "{\n \"first_name\": \"Jose\",\n \"last_name\": \"Harrison\",\n \"email\": \"joseharr@gmail.com\",\n \"phone_number\": \"2474975253\",\n \"birthday\": \"1985-12-15\",\n \"sex\": \"male\"\n}\n"
+    },
+    {
+      "step": 7,
+      "text": null,
+      "usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 3730,
+        "total_tokens": 3773,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 7,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"password\\\":\\\"rvP5MvY\\\",\\\"username\\\":\\\"joseharr@gmail.com\\\"}\",\"name\":\"spotify__login\"}",
+      "result": "{\n \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\",\n \"token_type\": \"Bearer\"\n}\n"
+    },
+    {
+      "step": 8,
+      "text": null,
+      "usage": {
+        "completion_tokens": 141,
+        "prompt_tokens": 3910,
+        "total_tokens": 4051,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 8,
+      "call": "call_function",
+      "args": "{\"args\":\"{}\",\"name\":\"spotify__show_song_library\"}",
+      "result": "Error: you already made this exact call and it did not help. Change the arguments or use another function."
+    },
+    {
+      "step": 8,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_liked_songs\",\"args\":\"{}\"}",
+      "result": "Error: you already made this exact call and it did not help. Change the arguments or use another function."
+    },
+    {
+      "step": 8,
+      "call": "call_function",
+      "args": "{\"args\":\"{}\",\"name\":\"spotify__show_downloaded_songs\"}",
+      "result": "Error: you already made this exact call and it did not help. Change the arguments or use another function."
+    },
+    {
+      "step": 8,
+      "call": "call_function",
+      "args": "{\"args\":\"{}\",\"name\":\"spotify__show_album_library\"}",
+      "result": "Error: you already made this exact call and it did not help. Change the arguments or use another function."
+    },
+    {
+      "step": 8,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_liked_albums\",\"args\":\"{}\"}",
+      "result": "Error: you already made this exact call and it did not help. Change the arguments or use another function."
+    },
+    {
+      "step": 9,
+      "text": null,
+      "usage": {
+        "completion_tokens": 121,
+        "prompt_tokens": 4222,
+        "total_tokens": 4343,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 9,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__show_song_library\"}",
+      "result": "{\"name\": \"spotify__show_song_library\", \"description\": \"Search or show a list of songs in your song library.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"query\": {\"type\": \"string\", \"description\": \"The search query string.\", \"default\": \"\"}, \"page_index\": {\"type\": \"integer\", \"minimum\": 0, \"description\": \"The index of the page to return.\", \"default\": 0}, \"page_limit\": {\"type\": \"integer\", \"maximum\": 20, \"minimum\": 1, \"description\": \"The maximum number of results to return per page.\", \"default\": 5}, \"sort_by\": {\"type\": \"string\", \"description\": \"The attribute to sort the library songs by prefixed with +/- to reflect ascending/descending. Valid attributes: added_at and title. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -added_at.\", \"default\": null}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"access_token\"]}}"
+    },
+    {
+      "step": 9,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__show_liked_songs\"}",
+      "result": "{\"name\": \"spotify__show_liked_songs\", \"description\": \"Get a list of songs you have liked.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"page_index\": {\"type\": \"integer\", \"minimum\": 0, \"description\": \"The index of the page to return.\", \"default\": 0}, \"page_limit\": {\"type\": \"integer\", \"maximum\": 20, \"minimum\": 1, \"description\": \"The maximum number of results to return per page.\", \"default\": 5}, \"sort_by\": {\"type\": \"string\", \"description\": \"The attribute to sort the liked songs by prefixed with +/- to reflect ascending/descending. Valid attributes: liked_at, play_count and title.\", \"default\": \"-liked_at\"}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"access_token\"]}}"
+    },
+    {
+      "step": 9,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__show_downloaded_songs\"}",
+      "result": "{\"name\": \"spotify__show_downloaded_songs\", \"description\": \"Search or show a list of your downloaded songs.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"query\": {\"type\": \"string\", \"description\": \"The search query string.\", \"default\": \"\"}, \"min_downloaded_at\": {\"type\": \"string\", \"description\": \"Filter songs by minimum downloaded_at date in YYYY-MM-DD format.\", \"default\": \"1500-01-01\"}, \"max_downloaded_at\": {\"type\": \"string\", \"description\": \"Filter songs by maximum downloaded_at date in YYYY-MM-DD format.\", \"default\": \"3000-01-01\"}, \"page_index\": {\"type\": \"integer\", \"minimum\": 0, \"description\": \"The index of the page to return.\", \"default\": 0}, \"page_limit\": {\"type\": \"integer\", \"maximum\": 20, \"minimum\": 1, \"description\": \"The maximum number of results to return per page.\", \"default\": 5}, \"sort_by\": {\"type\": \"string\", \"description\": \"The attribute to sort the downloaded songs by prefixed with +/- to reflect ascending/descending. Valid attributes: created_at and downloaded_at. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -downloaded_at.\", \"default\": null}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"access_token\"]}}"
+    },
+    {
+      "step": 9,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__show_album_library\"}",
+      "result": "{\"name\": \"spotify__show_album_library\", \"description\": \"Search or show a list of albums in your album library.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"query\": {\"type\": \"string\", \"description\": \"The search query string.\", \"default\": \"\"}, \"page_index\": {\"type\": \"integer\", \"minimum\": 0, \"description\": \"The index of the page to return.\", \"default\": 0}, \"page_limit\": {\"type\": \"integer\", \"maximum\": 20, \"minimum\": 1, \"description\": \"The maximum number of results to return per page.\", \"default\": 5}, \"sort_by\": {\"type\": \"string\", \"description\": \"The attribute to sort the library albums by prefixed with +/- to reflect ascending/descending. Valid attributes: added_at and title. If both query and sort_by are given and non-empty, results will be first ranked by query relevance, then paginated, and will then be sorted by the given attribute within each page. If both query and sort_by are not given, null, or empty, sort_by will default to -added_at.\", \"default\": null}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"access_token\"]}}"
+    },
+    {
+      "step": 9,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__show_liked_albums\"}",
+      "result": "{\"name\": \"spotify__show_liked_albums\", \"description\": \"Get a list of albums you have liked.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"page_index\": {\"type\": \"integer\", \"minimum\": 0, \"description\": \"The index of the page to return.\", \"default\": 0}, \"page_limit\": {\"type\": \"integer\", \"maximum\": 20, \"minimum\": 1, \"description\": \"The maximum number of results to return per page.\", \"default\": 5}, \"sort_by\": {\"type\": \"string\", \"description\": \"The attribute to sort the liked albums by prefixed with +/- to reflect ascending/descending. Valid attributes: liked_at and title.\", \"default\": \"-liked_at\"}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"access_token\"]}}"
+    },
+    {
+      "step": 10,
+      "text": null,
+      "usage": {
+        "completion_tokens": 716,
+        "prompt_tokens": 5787,
+        "total_tokens": 6503,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1967,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 10,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"page_limit\\\":20}\",\"name\":\"spotify__show_song_library\"}",
+      "result": "[\n {\n  \"song_id\": 228,\n  \"title\": \"The Last Waltz of a Broken Heart\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 271,\n  \"artists\": [\n   {\n    \"id\": 23,\n    \"name\": \"Soulful Reverie\"\n   }\n  ],\n  \"added_at\": \"2023-05-17T01:15:04\"\n },\n {\n  \"song_id\": 125,\n  \"title\": \"Heart's Abyss\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 189,\n  \"artists\": [\n   {\n    \"id\": 8,\n    \"name\": \"Aria Sterling\"\n   }\n  ],\n  \"added_at\": \"2023-04-18T14:14:06\"\n },\n {\n  \"song_id\": 16,\n  \"title\": \"Yearning for a Glimpse of Heaven\",\n  \"album_id\": 4,\n  \"album_title\": \"Neon Echoes\",\n  \"duration\": 207,\n  \"artists\": [\n   {\n    \"id\": 36,\n    \"name\": \"Noah Bennett\"\n   }\n  ],\n  \"added_at\": \"2023-04-10T06:13:57\"\n },\n {\n  \"song_id\": 257,\n  \"title\": \"In the Theater of Broken Promises\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 194,\n  \"artists\": [\n   {\n    \"id\": 26,\n    \"name\": \"Isabella Cruz\"\n   }\n  ],\n  \"added_at\": \"2023-03-22T21:01:04\"\n },\n {\n  \"song_id\": 105,\n  \"title\": \"Beyond the Horizon's Reach\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 238,\n  \"artists\": [\n   {\n    \"id\": 4,\n    \"name\": \"Marigold Muse\"\n   }\n  ],\n  \"added_at\": \"2023-03-11T03:16:53\"\n },\n {\n  \"song_id\": 14,\n  \"title\": \"Memories Etched in Melancholy\",\n  \"album_id\": 3,\n  \"album_title\": \"Nocturnal Melodies\",\n  \"duration\": 196,\n  \"artists\": [\n   {\n    \"id\": 16,\n    \"name\": \"Apollo Serenade\"\n   },\n   {\n    \"id\": 2,\n    \"name\": \"Phoenix Rivers\"\n   }\n  ],\n  \"added_at\": \"2023-03-01T01:49:57\"\n },\n {\n  \"song_id\": 319,\n  \"title\": \"Under the Willow\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 290,\n  \"artists\": [\n   {\n    \"id\": 35,\n    \"name\": \"Nova Harmony\"\n   }\n  ],\n  \"added_at\": \"2022-12-16T08:04:42\"\n },\n {\n  \"song_id\": 214,\n  \"title\": \"The Sweet Pain of Reminiscence\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 253,\n  \"artists\": [\n   {\n    \"id\": 21,\n    \"name\": \"Oceanic Odyssey\"\n   }\n  ],\n  \"added_at\": \"2022-11-19T17:20:50\"\n },\n {\n  \"song_id\": 143,\n  \"title\": \"Chasing Ghosts\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 199,\n  \"artists\": [\n   {\n    \"id\": 10,\n    \"name\": \"Zoe Mitchell\"\n   }\n  ],\n  \"added_at\": \"2022-09-24T13:27:33\"\n },\n {\n  \"song_id\": 139,\n  \"title\": \"Momentary Bliss\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 236,\n  \"artists\": [\n   {\n    \"id\": 10,\n    \"name\": \"Zoe Mitchell\"\n   }\n  ],\n  \"added_at\": \"2022-09-12T10:54:40\"\n },\n {\n  \"song_id\": 259,\n  \"title\": \"Invisible Whispers\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 192,\n  \"artists\": [\n   {\n    \"id\": 27,\n    \"name\": \"Carter Knight\"\n   }\n  ],\n  \"added_at\": \"2022-09-11T15:38:37\"\n },\n {\n  \"song_id\": 149,\n  \"title\": \"Ephemeral Beauty\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 234,\n  \"artists\": [\n   {\n    \"id\": 11,\n    \"name\": \"Eliana Harper\"\n   }\n  ],\n  \"added_at\": \"2022-09-09T20:35:34\"\n },\n {\n  \"song_id\": 310,\n  \"title\": \"Harmony of the Distant Stars\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 289,\n  \"artists\": [\n   {\n    \"id\": 34,\n    \"name\": \"Lily Moon\"\n   }\n  ],\n  \"added_at\": \"2022-08-22T06:03:29\"\n },\n {\n  \"song_id\": 317,\n  \"title\": \"Trapped in a Daydream\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 225,\n  \"artists\": [\n   {\n    \"id\": 35,\n    \"name\": \"Nova Harmony\"\n   }\n  ],\n  \"added_at\": \"2022-08-21T09:11:16\"\n },\n {\n  \"song_id\": 23,\n  \"title\": \"Solitude's Melancholy\",\n  \"album_id\": 5,\n  \"album_title\": \"Velvet Shadows\",\n  \"duration\": 287,\n  \"artists\": [\n   {\n    \"id\": 32,\n    \"name\": \"Lucas Grey\"\n   },\n   {\n    \"id\": 25,\n    \"name\": \"Velvet Echo\"\n   }\n  ],\n  \"added_at\": \"2022-08-21T08:12:13\"\n },\n {\n  \"song_id\": 89,\n  \"title\": \"Glass Castles\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 224,\n  \"artists\": [\n   {\n    \"id\": 2,\n    \"name\": \"Phoenix Rivers\"\n   }\n  ],\n  \"added_at\": \"2022-07-31T06:14:04\"\n }\n]\n"
+    },
+    {
+      "step": 10,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_liked_songs\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"page_limit\\\":20}\"}",
+      "result": "[\n {\n  \"song_id\": 14,\n  \"title\": \"Memories Etched in Melancholy\",\n  \"album_id\": 3,\n  \"album_title\": \"Nocturnal Melodies\",\n  \"duration\": 196,\n  \"artists\": [\n   {\n    \"id\": 16,\n    \"name\": \"Apollo Serenade\"\n   },\n   {\n    \"id\": 2,\n    \"name\": \"Phoenix Rivers\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 36,\n  \"title\": \"A Whisper in the Midnight Air\",\n  \"album_id\": 7,\n  \"album_title\": \"Vibrant Visions\",\n  \"duration\": 234,\n  \"artists\": [\n   {\n    \"id\": 11,\n    \"name\": \"Eliana Harper\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 68,\n  \"title\": \"Lost in the Wilderness of Love\",\n  \"album_id\": 14,\n  \"album_title\": \"Midnight Serenade\",\n  \"duration\": 280,\n  \"artists\": [\n   {\n    \"id\": 34,\n    \"name\": \"Lily Moon\"\n   },\n   {\n    \"id\": 9,\n    \"name\": \"Zoey James\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 89,\n  \"title\": \"Glass Castles\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 224,\n  \"artists\": [\n   {\n    \"id\": 2,\n    \"name\": \"Phoenix Rivers\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 126,\n  \"title\": \"A Symphony Written in Tears\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 235,\n  \"artists\": [\n   {\n    \"id\": 8,\n    \"name\": \"Aria Sterling\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 149,\n  \"title\": \"Ephemeral Beauty\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 234,\n  \"artists\": [\n   {\n    \"id\": 11,\n    \"name\": \"Eliana Harper\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 228,\n  \"title\": \"The Last Waltz of a Broken Heart\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 271,\n  \"artists\": [\n   {\n    \"id\": 23,\n    \"name\": \"Soulful Reverie\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 237,\n  \"title\": \"Veiled Behind a Mask of Joy\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 248,\n  \"artists\": [\n   {\n    \"id\": 24,\n    \"name\": \"Liam Palmer\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 275,\n  \"title\": \"In the Arms of Solitude\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 187,\n  \"artists\": [\n   {\n    \"id\": 29,\n    \"name\": \"Lucas Diaz\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 317,\n  \"title\": \"Trapped in a Daydream\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 225,\n  \"artists\": [\n   {\n    \"id\": 35,\n    \"name\": \"Nova Harmony\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 319,\n  \"title\": \"Under the Willow\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 290,\n  \"artists\": [\n   {\n    \"id\": 35,\n    \"name\": \"Nova Harmony\"\n   }\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n }\n]\n"
+    },
+    {
+      "step": 10,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"page_limit\\\":20}\",\"name\":\"spotify__show_downloaded_songs\"}",
+      "result": "[\n {\n  \"song_id\": 7,\n  \"title\": \"Memories Stitched in Time\",\n  \"album_id\": 1,\n  \"album_title\": \"Echo Chamber Chronicles\",\n  \"duration\": 279,\n  \"artists\": [\n   {\n    \"id\": 3,\n    \"name\": \"Jasper Skye\"\n   },\n   {\n    \"id\": 26,\n    \"name\": \"Isabella Cruz\"\n   },\n   {\n    \"id\": 6,\n    \"name\": \"Seraphina Dawn\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 14,\n  \"title\": \"Memories Etched in Melancholy\",\n  \"album_id\": 3,\n  \"album_title\": \"Nocturnal Melodies\",\n  \"duration\": 196,\n  \"artists\": [\n   {\n    \"id\": 16,\n    \"name\": \"Apollo Serenade\"\n   },\n   {\n    \"id\": 2,\n    \"name\": \"Phoenix Rivers\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 16,\n  \"title\": \"Yearning for a Glimpse of Heaven\",\n  \"album_id\": 4,\n  \"album_title\": \"Neon Echoes\",\n  \"duration\": 207,\n  \"artists\": [\n   {\n    \"id\": 36,\n    \"name\": \"Noah Bennett\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 60,\n  \"title\": \"The Haunting Echo of Goodbye\",\n  \"album_id\": 12,\n  \"album_title\": \"Astral Journey\",\n  \"duration\": 224,\n  \"artists\": [\n   {\n    \"id\": 9,\n    \"name\": \"Zoey James\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 77,\n  \"title\": \"Whispers of the Soul\",\n  \"album_id\": 17,\n  \"album_title\": \"Enchanted Melodies\",\n  \"duration\": 270,\n  \"artists\": [\n   {\n    \"id\": 12,\n    \"name\": \"Mia Sullivan\"\n   },\n   {\n    \"id\": 27,\n    \"name\": \"Carter Knight\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 78,\n  \"title\": \"A Love That Never Was\",\n  \"album_id\": 17,\n  \"album_title\": \"Enchanted Melodies\",\n  \"duration\": 237,\n  \"artists\": [\n   {\n    \"id\": 12,\n    \"name\": \"Mia Sullivan\"\n   },\n   {\n    \"id\": 27,\n    \"name\": \"Carter Knight\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 79,\n  \"title\": \"Fleeting Touch\",\n  \"album_id\": 17,\n  \"album_title\": \"Enchanted Melodies\",\n  \"duration\": 222,\n  \"artists\": [\n   {\n    \"id\": 12,\n    \"name\": \"Mia Sullivan\"\n   },\n   {\n    \"id\": 27,\n    \"name\": \"Carter Knight\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 80,\n  \"title\": \"Wandering the Streets Alone\",\n  \"album_id\": 18,\n  \"album_title\": \"Echoes of Eternity\",\n  \"duration\": 189,\n  \"artists\": [\n   {\n    \"id\": 33,\n    \"name\": \"Felix Blackwood\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 81,\n  \"title\": \"Echoes of the Whispering Wind\",\n  \"album_id\": 18,\n  \"album_title\": \"Echoes of Eternity\",\n  \"duration\": 217,\n  \"artists\": [\n   {\n    \"id\": 33,\n    \"name\": \"Felix Blackwood\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 82,\n  \"title\": \"Lost in the Twilight of Hope\",\n  \"album_id\": 18,\n  \"album_title\": \"Echoes of Eternity\",\n  \"duration\": 193,\n  \"artists\": [\n   {\n    \"id\": 33,\n    \"name\": \"Felix Blackwood\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 89,\n  \"title\": \"Glass Castles\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 224,\n  \"artists\": [\n   {\n    \"id\": 2,\n    \"name\": \"Phoenix Rivers\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 125,\n  \"title\": \"Heart's Abyss\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 189,\n  \"artists\": [\n   {\n    \"id\": 8,\n    \"name\": \"Aria Sterling\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 175,\n  \"title\": \"Stardust Serenade\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 286,\n  \"artists\": [\n   {\n    \"id\": 15,\n    \"name\": \"Violet Cascade\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 257,\n  \"title\": \"In the Theater of Broken Promises\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 194,\n  \"artists\": [\n   {\n    \"id\": 26,\n    \"name\": \"Isabella Cruz\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 272,\n  \"title\": \"Torn Apart\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 260,\n  \"artists\": [\n   {\n    \"id\": 28,\n    \"name\": \"Evelyn Rose\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"song_id\": 317,\n  \"title\": \"Trapped in a Daydream\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 225,\n  \"artists\": [\n   {\n    \"id\": 35,\n    \"name\": \"Nova Harmony\"\n   }\n  ],\n  \"downloaded_at\": \"2023-05-18T12:00:00\"\n }\n]\n"
+    },
+    {
+      "step": 10,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"page_limit\\\":20}\",\"name\":\"spotify__show_album_library\"}",
+      "result": "[\n {\n  \"album_id\": 1,\n  \"title\": \"Echo Chamber Chronicles\",\n  \"genre\": \"EDM\",\n  \"artists\": [\n   {\n    \"id\": 3,\n    \"name\": \"Jasper Skye\"\n   },\n   {\n    \"id\": 26,\n    \"name\": \"Isabella Cruz\"\n   },\n   {\n    \"id\": 6,\n    \"name\": \"Seraphina Dawn\"\n   }\n  ],\n  \"rating\": 3.2,\n  \"like_count\": 35,\n  \"review_count\": 12,\n  \"release_date\": \"2022-10-29T01:54:53\",\n  \"song_ids\": [\n   1,\n   2,\n   3,\n   4,\n   5,\n   6,\n   7\n  ],\n  \"added_at\": \"2023-03-22T22:17:53\"\n },\n {\n  \"album_id\": 7,\n  \"title\": \"Vibrant Visions\",\n  \"genre\": \"hip-hop\",\n  \"artists\": [\n   {\n    \"id\": 11,\n    \"name\": \"Eliana Harper\"\n   }\n  ],\n  \"rating\": 3.4,\n  \"like_count\": 44,\n  \"review_count\": 20,\n  \"release_date\": \"2021-02-05T04:10:20\",\n  \"song_ids\": [\n   33,\n   34,\n   35,\n   36\n  ],\n  \"added_at\": \"2023-02-25T21:36:40\"\n },\n {\n  \"album_id\": 18,\n  \"title\": \"Echoes of Eternity\",\n  \"genre\": \"classical\",\n  \"artists\": [\n   {\n    \"id\": 33,\n    \"name\": \"Felix Blackwood\"\n   }\n  ],\n  \"rating\": 3.7,\n  \"like_count\": 37,\n  \"review_count\": 21,\n  \"release_date\": \"2022-07-06T10:24:33\",\n  \"song_ids\": [\n   80,\n   81,\n   82\n  ],\n  \"added_at\": \"2022-12-23T20:27:32\"\n },\n {\n  \"album_id\": 4,\n  \"title\": \"Neon Echoes\",\n  \"genre\": \"indie\",\n  \"artists\": [\n   {\n    \"id\": 36,\n    \"name\": \"Noah Bennett\"\n   }\n  ],\n  \"rating\": 3.4,\n  \"like_count\": 33,\n  \"review_count\": 20,\n  \"release_date\": \"2021-03-23T13:53:26\",\n  \"song_ids\": [\n   16,\n   17,\n   18,\n   19,\n   20,\n   21,\n   22\n  ],\n  \"added_at\": \"2022-09-13T17:56:56\"\n },\n {\n  \"album_id\": 17,\n  \"title\": \"Enchanted Melodies\",\n  \"genre\": \"classical\",\n  \"artists\": [\n   {\n    \"id\": 12,\n    \"name\": \"Mia Sullivan\"\n   },\n   {\n    \"id\": 27,\n    \"name\": \"Carter Knight\"\n   }\n  ],\n  \"rating\": 3.6,\n  \"like_count\": 41,\n  \"review_count\": 17,\n  \"release_date\": \"2020-10-15T13:57:09\",\n  \"song_ids\": [\n   77,\n   78,\n   79\n  ],\n  \"added_at\": \"2022-08-31T00:59:11\"\n },\n {\n  \"album_id\": 16,\n  \"title\": \"Electric Dreamscape\",\n  \"genre\": \"rock\",\n  \"artists\": [\n   {\n    \"id\": 34,\n    \"name\": \"Lily Moon\"\n   },\n   {\n    \"id\": 9,\n    \"name\": \"Zoey James\"\n   }\n  ],\n  \"rating\": 3.8,\n  \"like_count\": 32,\n  \"review_count\": 16,\n  \"release_date\": \"2022-08-02T08:03:50\",\n  \"song_ids\": [\n   74,\n   75,\n   76\n  ],\n  \"added_at\": \"2022-08-29T02:31:56\"\n },\n {\n  \"album_id\": 8,\n  \"title\": \"Velvet Underground\",\n  \"genre\": \"jazz\",\n  \"artists\": [\n   {\n    \"id\": 8,\n    \"name\": \"Aria Sterling\"\n   }\n  ],\n  \"rating\": 3.6,\n  \"like_count\": 38,\n  \"review_count\": 17,\n  \"release_date\": \"2021-06-10T10:41:47\",\n  \"song_ids\": [\n   37,\n   38,\n   39,\n   40,\n   41,\n   42,\n   43\n  ],\n  \"added_at\": \"2022-08-24T21:11:33\"\n }\n]\n"
+    },
+    {
+      "step": 10,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_liked_albums\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"page_limit\\\":20}\"}",
+      "result": "[\n {\n  \"album_id\": 1,\n  \"title\": \"Echo Chamber Chronicles\",\n  \"genre\": \"EDM\",\n  \"artists\": [\n   {\n    \"id\": 3,\n    \"name\": \"Jasper Skye\"\n   },\n   {\n    \"id\": 26,\n    \"name\": \"Isabella Cruz\"\n   },\n   {\n    \"id\": 6,\n    \"name\": \"Seraphina Dawn\"\n   }\n  ],\n  \"rating\": 3.2,\n  \"like_count\": 35,\n  \"review_count\": 12,\n  \"release_date\": \"2022-10-29T01:54:53\",\n  \"song_ids\": [\n   1,\n   2,\n   3,\n   4,\n   5,\n   6,\n   7\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"album_id\": 17,\n  \"title\": \"Enchanted Melodies\",\n  \"genre\": \"classical\",\n  \"artists\": [\n   {\n    \"id\": 12,\n    \"name\": \"Mia Sullivan\"\n   },\n   {\n    \"id\": 27,\n    \"name\": \"Carter Knight\"\n   }\n  ],\n  \"rating\": 3.6,\n  \"like_count\": 41,\n  \"review_count\": 17,\n  \"release_date\": \"2020-10-15T13:57:09\",\n  \"song_ids\": [\n   77,\n   78,\n   79\n  ],\n  \"liked_at\": \"2023-05-18T12:00:00\"\n },\n {\n  \"album_id\": 6,\n  \"title\": \"Ethereal Rhapsody\",\n  \"genre\": \"indie\",\n  \"artists\": [\n   {\n    \"id\": 36,\n    \"name\": \"Noah Bennett\"\n   },\n   {\n    \"id\": 19,\n    \"name\": \"Ethan Wallace\"\n   },\n   {\n    \"id\": 35,\n    \"name\": \"Nova Harmony\"\n   }\n  ],\n  \"rating\": 3.9,\n  \"like_count\": 37,\n  \"review_count\": 18,\n  \"release_date\": \"2021-04-02T04:32:45\",\n  \"song_ids\": [\n   29,\n   30,\n   31,\n   32\n  ],\n  \"liked_at\": \"2022-11-23T14:53:31\"\n },\n {\n  \"album_id\": 14,\n  \"title\": \"Midnight Serenade\",\n  \"genre\": \"rock\",\n  \"artists\": [\n   {\n    \"id\": 34,\n    \"name\": \"Lily Moon\"\n   },\n   {\n    \"id\": 9,\n    \"name\": \"Zoey James\"\n   }\n  ],\n  \"rating\": 3.4,\n  \"like_count\": 44,\n  \"review_count\": 14,\n  \"release_date\": \"2022-02-21T17:34:33\",\n  \"song_ids\": [\n   67,\n   68,\n   69\n  ],\n  \"liked_at\": \"2022-08-30T00:16:35\"\n },\n {\n  \"album_id\": 12,\n  \"title\": \"Astral Journey\",\n  \"genre\": \"rock\",\n  \"artists\": [\n   {\n    \"id\": 9,\n    \"name\": \"Zoey James\"\n   }\n  ],\n  \"rating\": 3.7,\n  \"like_count\": 43,\n  \"review_count\": 16,\n  \"release_date\": \"2021-10-02T22:00:08\",\n  \"song_ids\": [\n   58,\n   59,\n   60,\n   61,\n   62\n  ],\n  \"liked_at\": \"2022-08-19T04:09:38\"\n }\n]\n"
+    },
+    {
+      "step": 11,
+      "text": null,
+      "usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 14447,
+        "total_tokens": 14499,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 4019,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 11,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__remove_song_from_library\"}",
+      "result": "{\"name\": \"spotify__remove_song_from_library\", \"description\": \"Remove a song from your song library.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"song_id\": {\"type\": \"integer\", \"description\": \"The song id to remove.\"}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"song_id\", \"access_token\"]}}"
+    },
+    {
+      "step": 11,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__remove_album_from_library\"}",
+      "result": "{\"name\": \"spotify__remove_album_from_library\", \"description\": \"Remove an album from your album library.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"album_id\": {\"type\": \"integer\", \"description\": \"The album id to remove.\"}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"album_id\", \"access_token\"]}}"
+    },
+    {
+      "step": 12,
+      "text": null,
+      "usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 14722,
+        "total_tokens": 14751,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 12049,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 12,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_downloaded_songs\",\"args\":\"{\"}",
+      "result": "Error: 'args' must be a JSON object string."
+    },
+    {
+      "step": 13,
+      "text": null,
+      "usage": {
+        "completion_tokens": 168,
+        "prompt_tokens": 14776,
+        "total_tokens": 14944,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 12042,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 13,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"min_downloaded_at\\\":\\\"1500-01-01\\\",\\\"page_index\\\":1,\\\"page_limit\\\":20}\",\"name\":\"spotify__show_downloaded_songs\"}",
+      "result": "[]\n"
+    },
+    {
+      "step": 14,
+      "text": null,
+      "usage": {
+        "completion_tokens": 168,
+        "prompt_tokens": 14959,
+        "total_tokens": 15127,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 12037,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 14,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_album-privates\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":3}\"}",
+      "result": "Error: 'spotify__show_album-privates' is not an app function. Find names with app_func_list; app_func_list and get_func_doc are separate tools."
+    },
+    {
+      "step": 14,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__show_album_privates\"}",
+      "result": "{\"name\": \"spotify__show_album_privates\", \"description\": \"Show information about the album that is private to the user.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"album_id\": {\"type\": \"integer\", \"description\": \"The album id to retrieve.\"}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"album_id\", \"access_token\"]}}"
+    },
+    {
+      "step": 15,
+      "text": null,
+      "usage": {
+        "completion_tokens": 983,
+        "prompt_tokens": 15296,
+        "total_tokens": 16279,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 12030,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 15,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":1}\",\"name\":\"spotify__show_album\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_album(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 1}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Unexpected parameter 'access_token' passed to the show_album API of the spotify app. Allowed parameters are: ['album_id']"
+    },
+    {
+      "step": 15,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_album\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":7}\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_album(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 7}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Unexpected parameter 'access_token' passed to the show_album API of the spotify app. Allowed parameters are: ['album_id']"
+    },
+    {
+      "step": 15,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":18}\",\"name\":\"spotify__show_album\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_album(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 18}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Unexpected parameter 'access_token' passed to the show_album API of the spotify app. Allowed parameters are: ['album_id']"
+    },
+    {
+      "step": 15,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":4}\",\"name\":\"spotify__show_album\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_album(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 4}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Unexpected parameter 'access_token' passed to the show_album API of the spotify app. Allowed parameters are: ['album_id']"
+    },
+    {
+      "step": 15,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":17}\",\"name\":\"spotify__show_album\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_album(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 17}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Unexpected parameter 'access_token' passed to the show_album API of the spotify app. Allowed parameters are: ['album_id']"
+    },
+    {
+      "step": 15,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":16}\",\"name\":\"spotify__show_album\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_album(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 16}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Unexpected parameter 'access_token' passed to the show_album API of the spotify app. Allowed parameters are: ['album_id']"
+    },
+    {
+      "step": 15,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_album\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":8}\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__show_album(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 8}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Unexpected parameter 'access_token' passed to the show_album API of the spotify app. Allowed parameters are: ['album_id']"
+    },
+    {
+      "step": 16,
+      "text": null,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 18022,
+        "total_tokens": 18044,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 14039,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 16,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__show_album\"}",
+      "result": "{\"name\": \"spotify__show_album\", \"description\": \"Get details of a specific album.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"album_id\": {\"type\": \"integer\", \"description\": \"The album id to retrieve.\"}}, \"required\": [\"album_id\"]}}"
+    },
+    {
+      "step": 17,
+      "text": null,
+      "usage": {
+        "completion_tokens": 227,
+        "prompt_tokens": 18123,
+        "total_tokens": 18350,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 16038,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 17,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_album\",\"args\":\"{\\\"album_id\\\":1}\"}",
+      "result": "{\n \"album_id\": 1,\n \"title\": \"Echo Chamber Chronicles\",\n \"genre\": \"EDM\",\n \"artists\": [\n  {\n   \"id\": 3,\n   \"name\": \"Jasper Skye\"\n  },\n  {\n   \"id\": 26,\n   \"name\": \"Isabella Cruz\"\n  },\n  {\n   \"id\": 6,\n   \"name\": \"Seraphina Dawn\"\n  }\n ],\n \"rating\": 3.2,\n \"like_count\": 35,\n \"review_count\": 12,\n \"release_date\": \"2022-10-29T01:54:53\",\n \"shareable_link\": \"https://spotify.com/albums/1\",\n \"songs\": [\n  {\n   \"id\": 1,\n   \"title\": \"Painting Shadows on the Wall\",\n   \"album_id\": 1,\n   \"album_title\": \"Echo Chamber Chronicles\",\n   \"duration\": 217,\n   \"artists\": [\n    {\n     \"id\": 3,\n     \"name\": \"Jasper Skye\"\n    },\n    {\n     \"id\": 26,\n     \"name\": \"Isabella Cruz\"\n    },\n    {\n     \"id\": 6,\n     \"name\": \"Seraphina Dawn\"\n    }\n   ]\n  },\n  {\n   \"id\": 2,\n   \"title\": \"Lost in the Mists of Time\",\n   \"album_id\": 1,\n   \"album_title\": \"Echo Chamber Chronicles\",\n   \"duration\": 224,\n   \"artists\": [\n    {\n     \"id\": 3,\n     \"name\": \"Jasper Skye\"\n    },\n    {\n     \"id\": 26,\n     \"name\": \"Isabella Cruz\"\n    },\n    {\n     \"id\": 6,\n     \"name\": \"Seraphina Dawn\"\n    }\n   ]\n  },\n  {\n   \"id\": 3,\n   \"title\": \"The Fragrance of Fading Roses\",\n   \"album_id\": 1,\n   \"album_title\": \"Echo Chamber Chronicles\",\n   \"duration\": 270,\n   \"artists\": [\n    {\n     \"id\": 3,\n     \"name\": \"Jasper Skye\"\n    },\n    {\n     \"id\": 26,\n     \"name\": \"Isabella Cruz\"\n    },\n    {\n     \"id\": 6,\n     \"name\": \"Seraphina Dawn\"\n    }\n   ]\n  },\n  {\n   \"id\": 4,\n   \"title\": \"The Puzzle of My Heart\",\n   \"album_id\": 1,\n   \"album_title\": \"Echo Chamber Chronicles\",\n   \"duration\": 181,\n   \"artists\": [\n    {\n     \"id\": 3,\n     \"name\": \"Jasper Skye\"\n    },\n    {\n     \"id\": 26,\n     \"name\": \"Isabella Cruz\"\n    },\n    {\n     \"id\": 6,\n     \"name\": \"Seraphina Dawn\"\n    }\n   ]\n  },\n  {\n   \"id\": 5,\n   \"title\": \"Chasing the Ghosts of Yesterday\",\n   \"album_id\": 1,\n   \"album_title\": \"Echo Chamber Chronicles\",\n   \"duration\": 255,\n   \"artists\": [\n    {\n     \"id\": 3,\n     \"name\": \"Jasper Skye\"\n    },\n    {\n     \"id\": 26,\n     \"name\": \"Isabella Cruz\"\n    },\n    {\n     \"id\": 6,\n     \"name\": \"Seraphina Dawn\"\n    }\n   ]\n  },\n  {\n   \"id\": 6,\n   \"title\": \"Reflections in a Pool of Regret\",\n   \"album_id\": 1,\n   \"album_title\": \"Echo Chamber Chronicles\",\n   \"duration\": 271,\n   \"artists\": [\n    {\n     \"id\": 3,\n     \"name\": \"Jasper Skye\"\n    },\n    {\n     \"id\": 26,\n     \"name\": \"Isabella Cruz\"\n    },\n    {\n     \"id\": 6,\n     \"name\": \"Seraphina Dawn\"\n    }\n   ]\n  },\n  {\n   \"id\": 7,\n   \"title\": \"Memories Stitched in Time\",\n   \"album_id\": 1,\n   \"album_title\": \"Echo Chamber Chronicles\",\n   \"duration\": 279,\n   \"artists\": [\n    {\n     \"id\": 3,\n     \"name\": \"Jasper Skye\"\n    },\n    {\n     \"id\": 26,\n     \"name\": \"Isabella Cruz\"\n    },\n    {\n     \"id\": 6,\n     \"name\": \"Seraphina Dawn\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 17,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"album_id\\\":7}\",\"name\":\"spotify__show_album\"}",
+      "result": "{\n \"album_id\": 7,\n \"title\": \"Vibrant Visions\",\n \"genre\": \"hip-hop\",\n \"artists\": [\n  {\n   \"id\": 11,\n   \"name\": \"Eliana Harper\"\n  }\n ],\n \"rating\": 3.4,\n \"like_count\": 44,\n \"review_count\": 20,\n \"release_date\": \"2021-02-05T04:10:20\",\n \"shareable_link\": \"https://spotify.com/albums/7\",\n \"songs\": [\n  {\n   \"id\": 33,\n   \"title\": \"Unveiled\",\n   \"album_id\": 7,\n   \"album_title\": \"Vibrant Visions\",\n   \"duration\": 238,\n   \"artists\": [\n    {\n     \"id\": 11,\n     \"name\": \"Eliana Harper\"\n    }\n   ]\n  },\n  {\n   \"id\": 34,\n   \"title\": \"Under the Gaze of a Watchful Moon\",\n   \"album_id\": 7,\n   \"album_title\": \"Vibrant Visions\",\n   \"duration\": 196,\n   \"artists\": [\n    {\n     \"id\": 11,\n     \"name\": \"Eliana Harper\"\n    }\n   ]\n  },\n  {\n   \"id\": 35,\n   \"title\": \"Dancing in the Rain of Tears\",\n   \"album_id\": 7,\n   \"album_title\": \"Vibrant Visions\",\n   \"duration\": 244,\n   \"artists\": [\n    {\n     \"id\": 11,\n     \"name\": \"Eliana Harper\"\n    }\n   ]\n  },\n  {\n   \"id\": 36,\n   \"title\": \"A Whisper in the Midnight Air\",\n   \"album_id\": 7,\n   \"album_title\": \"Vibrant Visions\",\n   \"duration\": 234,\n   \"artists\": [\n    {\n     \"id\": 11,\n     \"name\": \"Eliana Harper\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 17,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"album_id\\\":18}\",\"name\":\"spotify__show_album\"}",
+      "result": "{\n \"album_id\": 18,\n \"title\": \"Echoes of Eternity\",\n \"genre\": \"classical\",\n \"artists\": [\n  {\n   \"id\": 33,\n   \"name\": \"Felix Blackwood\"\n  }\n ],\n \"rating\": 3.7,\n \"like_count\": 37,\n \"review_count\": 21,\n \"release_date\": \"2022-07-06T10:24:33\",\n \"shareable_link\": \"https://spotify.com/albums/18\",\n \"songs\": [\n  {\n   \"id\": 80,\n   \"title\": \"Wandering the Streets Alone\",\n   \"album_id\": 18,\n   \"album_title\": \"Echoes of Eternity\",\n   \"duration\": 189,\n   \"artists\": [\n    {\n     \"id\": 33,\n     \"name\": \"Felix Blackwood\"\n    }\n   ]\n  },\n  {\n   \"id\": 81,\n   \"title\": \"Echoes of the Whispering Wind\",\n   \"album_id\": 18,\n   \"album_title\": \"Echoes of Eternity\",\n   \"duration\": 217,\n   \"artists\": [\n    {\n     \"id\": 33,\n     \"name\": \"Felix Blackwood\"\n    }\n   ]\n  },\n  {\n   \"id\": 82,\n   \"title\": \"Lost in the Twilight of Hope\",\n   \"album_id\": 18,\n   \"album_title\": \"Echoes of Eternity\",\n   \"duration\": 193,\n   \"artists\": [\n    {\n     \"id\": 33,\n     \"name\": \"Felix Blackwood\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 17,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"album_id\\\":4}\",\"name\":\"spotify__show_album\"}",
+      "result": "{\n \"album_id\": 4,\n \"title\": \"Neon Echoes\",\n \"genre\": \"indie\",\n \"artists\": [\n  {\n   \"id\": 36,\n   \"name\": \"Noah Bennett\"\n  }\n ],\n \"rating\": 3.4,\n \"like_count\": 33,\n \"review_count\": 20,\n \"release_date\": \"2021-03-23T13:53:26\",\n \"shareable_link\": \"https://spotify.com/albums/4\",\n \"songs\": [\n  {\n   \"id\": 16,\n   \"title\": \"Yearning for a Glimpse of Heaven\",\n   \"album_id\": 4,\n   \"album_title\": \"Neon Echoes\",\n   \"duration\": 207,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    }\n   ]\n  },\n  {\n   \"id\": 17,\n   \"title\": \"Dancing Through the Veil of Dreams\",\n   \"album_id\": 4,\n   \"album_title\": \"Neon Echoes\",\n   \"duration\": 238,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    }\n   ]\n  },\n  {\n   \"id\": 18,\n   \"title\": \"Secrets We Dare Not Speak\",\n   \"album_id\": 4,\n   \"album_title\": \"Neon Echoes\",\n   \"duration\": 188,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    }\n   ]\n  },\n  {\n   \"id\": 19,\n   \"title\": \"Forged in Fire\",\n   \"album_id\": 4,\n   \"album_title\": \"Neon Echoes\",\n   \"duration\": 228,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    }\n   ]\n  },\n  {\n   \"id\": 20,\n   \"title\": \"Between the Depths and Heights\",\n   \"album_id\": 4,\n   \"album_title\": \"Neon Echoes\",\n   \"duration\": 183,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    }\n   ]\n  },\n  {\n   \"id\": 21,\n   \"title\": \"Lost in the Embrace of Night\",\n   \"album_id\": 4,\n   \"album_title\": \"Neon Echoes\",\n   \"duration\": 282,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    }\n   ]\n  },\n  {\n   \"id\": 22,\n   \"title\": \"Echoes from the Abyss\",\n   \"album_id\": 4,\n   \"album_title\": \"Neon Echoes\",\n   \"duration\": 192,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 17,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_album\",\"args\":\"{\\\"album_id\\\":17}\"}",
+      "result": "{\n \"album_id\": 17,\n \"title\": \"Enchanted Melodies\",\n \"genre\": \"classical\",\n \"artists\": [\n  {\n   \"id\": 12,\n   \"name\": \"Mia Sullivan\"\n  },\n  {\n   \"id\": 27,\n   \"name\": \"Carter Knight\"\n  }\n ],\n \"rating\": 3.6,\n \"like_count\": 41,\n \"review_count\": 17,\n \"release_date\": \"2020-10-15T13:57:09\",\n \"shareable_link\": \"https://spotify.com/albums/17\",\n \"songs\": [\n  {\n   \"id\": 77,\n   \"title\": \"Whispers of the Soul\",\n   \"album_id\": 17,\n   \"album_title\": \"Enchanted Melodies\",\n   \"duration\": 270,\n   \"artists\": [\n    {\n     \"id\": 12,\n     \"name\": \"Mia Sullivan\"\n    },\n    {\n     \"id\": 27,\n     \"name\": \"Carter Knight\"\n    }\n   ]\n  },\n  {\n   \"id\": 78,\n   \"title\": \"A Love That Never Was\",\n   \"album_id\": 17,\n   \"album_title\": \"Enchanted Melodies\",\n   \"duration\": 237,\n   \"artists\": [\n    {\n     \"id\": 12,\n     \"name\": \"Mia Sullivan\"\n    },\n    {\n     \"id\": 27,\n     \"name\": \"Carter Knight\"\n    }\n   ]\n  },\n  {\n   \"id\": 79,\n   \"title\": \"Fleeting Touch\",\n   \"album_id\": 17,\n   \"album_title\": \"Enchanted Melodies\",\n   \"duration\": 222,\n   \"artists\": [\n    {\n     \"id\": 12,\n     \"name\": \"Mia Sullivan\"\n    },\n    {\n     \"id\": 27,\n     \"name\": \"Carter Knight\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 17,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"album_id\\\":16}\",\"name\":\"spotify__show_album\"}",
+      "result": "{\n \"album_id\": 16,\n \"title\": \"Electric Dreamscape\",\n \"genre\": \"rock\",\n \"artists\": [\n  {\n   \"id\": 34,\n   \"name\": \"Lily Moon\"\n  },\n  {\n   \"id\": 9,\n   \"name\": \"Zoey James\"\n  }\n ],\n \"rating\": 3.8,\n \"like_count\": 32,\n \"review_count\": 16,\n \"release_date\": \"2022-08-02T08:03:50\",\n \"shareable_link\": \"https://spotify.com/albums/16\",\n \"songs\": [\n  {\n   \"id\": 74,\n   \"title\": \"On the Border of Reality\",\n   \"album_id\": 16,\n   \"album_title\": \"Electric Dreamscape\",\n   \"duration\": 296,\n   \"artists\": [\n    {\n     \"id\": 34,\n     \"name\": \"Lily Moon\"\n    },\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 75,\n   \"title\": \"Walking Through the Valley of Shadows\",\n   \"album_id\": 16,\n   \"album_title\": \"Electric Dreamscape\",\n   \"duration\": 195,\n   \"artists\": [\n    {\n     \"id\": 34,\n     \"name\": \"Lily Moon\"\n    },\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 76,\n   \"title\": \"Whispers of the Heart\",\n   \"album_id\": 16,\n   \"album_title\": \"Electric Dreamscape\",\n   \"duration\": 270,\n   \"artists\": [\n    {\n     \"id\": 34,\n     \"name\": \"Lily Moon\"\n    },\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 17,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_album\",\"args\":\"{\\\"album_id\\\":8}\"}",
+      "result": "{\n \"album_id\": 8,\n \"title\": \"Velvet Underground\",\n \"genre\": \"jazz\",\n \"artists\": [\n  {\n   \"id\": 8,\n   \"name\": \"Aria Sterling\"\n  }\n ],\n \"rating\": 3.6,\n \"like_count\": 38,\n \"review_count\": 17,\n \"release_date\": \"2021-06-10T10:41:47\",\n \"shareable_link\": \"https://spotify.com/albums/8\",\n \"songs\": [\n  {\n   \"id\": 37,\n   \"title\": \"Endless Roads\",\n   \"album_id\": 8,\n   \"album_title\": \"Velvet Underground\",\n   \"duration\": 268,\n   \"artists\": [\n    {\n     \"id\": 8,\n     \"name\": \"Aria Sterling\"\n    }\n   ]\n  },\n  {\n   \"id\": 38,\n   \"title\": \"Destiny's Game\",\n   \"album_id\": 8,\n   \"album_title\": \"Velvet Underground\",\n   \"duration\": 256,\n   \"artists\": [\n    {\n     \"id\": 8,\n     \"name\": \"Aria Sterling\"\n    }\n   ]\n  },\n  {\n   \"id\": 39,\n   \"title\": \"A Pathway to Nowhere\",\n   \"album_id\": 8,\n   \"album_title\": \"Velvet Underground\",\n   \"duration\": 207,\n   \"artists\": [\n    {\n     \"id\": 8,\n     \"name\": \"Aria Sterling\"\n    }\n   ]\n  },\n  {\n   \"id\": 40,\n   \"title\": \"Burning Like a Distant Star\",\n   \"album_id\": 8,\n   \"album_title\": \"Velvet Underground\",\n   \"duration\": 277,\n   \"artists\": [\n    {\n     \"id\": 8,\n     \"name\": \"Aria Sterling\"\n    }\n   ]\n  },\n  {\n   \"id\": 41,\n   \"title\": \"Gone Astray\",\n   \"album_id\": 8,\n   \"album_title\": \"Velvet Underground\",\n   \"duration\": 281,\n   \"artists\": [\n    {\n     \"id\": 8,\n     \"name\": \"Aria Sterling\"\n    }\n   ]\n  },\n  {\n   \"id\": 42,\n   \"title\": \"Unspoken Words\",\n   \"album_id\": 8,\n   \"album_title\": \"Velvet Underground\",\n   \"duration\": 199,\n   \"artists\": [\n    {\n     \"id\": 8,\n     \"name\": \"Aria Sterling\"\n    }\n   ]\n  },\n  {\n   \"id\": 43,\n   \"title\": \"Whispers of Destiny\",\n   \"album_id\": 8,\n   \"album_title\": \"Velvet Underground\",\n   \"duration\": 298,\n   \"artists\": [\n    {\n     \"id\": 8,\n     \"name\": \"Aria Sterling\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 18,
+      "text": null,
+      "usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 23177,
+        "total_tokens": 23205,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 18087,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 18,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_liked_albums\",\"args\":\"{\"}",
+      "result": "Error: 'args' must be a JSON object string."
+    },
+    {
+      "step": 19,
+      "text": null,
+      "usage": {
+        "completion_tokens": 149,
+        "prompt_tokens": 23230,
+        "total_tokens": 23379,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 20089,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 19,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"page_index\\\":1,\\\"page_limit\\\":20}\",\"name\":\"spotify__show_liked_albums\"}",
+      "result": "[]\n"
+    },
+    {
+      "step": 20,
+      "text": null,
+      "usage": {
+        "completion_tokens": 98,
+        "prompt_tokens": 23394,
+        "total_tokens": 23492,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 20083,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 20,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_album\",\"args\":\"{\\\"album_id\\\":6}\"}",
+      "result": "{\n \"album_id\": 6,\n \"title\": \"Ethereal Rhapsody\",\n \"genre\": \"indie\",\n \"artists\": [\n  {\n   \"id\": 36,\n   \"name\": \"Noah Bennett\"\n  },\n  {\n   \"id\": 19,\n   \"name\": \"Ethan Wallace\"\n  },\n  {\n   \"id\": 35,\n   \"name\": \"Nova Harmony\"\n  }\n ],\n \"rating\": 3.9,\n \"like_count\": 37,\n \"review_count\": 18,\n \"release_date\": \"2021-04-02T04:32:45\",\n \"shareable_link\": \"https://spotify.com/albums/6\",\n \"songs\": [\n  {\n   \"id\": 29,\n   \"title\": \"Violet Rain\",\n   \"album_id\": 6,\n   \"album_title\": \"Ethereal Rhapsody\",\n   \"duration\": 294,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    },\n    {\n     \"id\": 19,\n     \"name\": \"Ethan Wallace\"\n    },\n    {\n     \"id\": 35,\n     \"name\": \"Nova Harmony\"\n    }\n   ]\n  },\n  {\n   \"id\": 30,\n   \"title\": \"Eternal Flame\",\n   \"album_id\": 6,\n   \"album_title\": \"Ethereal Rhapsody\",\n   \"duration\": 258,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    },\n    {\n     \"id\": 19,\n     \"name\": \"Ethan Wallace\"\n    },\n    {\n     \"id\": 35,\n     \"name\": \"Nova Harmony\"\n    }\n   ]\n  },\n  {\n   \"id\": 31,\n   \"title\": \"Waves of Yesterday\",\n   \"album_id\": 6,\n   \"album_title\": \"Ethereal Rhapsody\",\n   \"duration\": 229,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    },\n    {\n     \"id\": 19,\n     \"name\": \"Ethan Wallace\"\n    },\n    {\n     \"id\": 35,\n     \"name\": \"Nova Harmony\"\n    }\n   ]\n  },\n  {\n   \"id\": 32,\n   \"title\": \"Wading Through Rivers of Tears\",\n   \"album_id\": 6,\n   \"album_title\": \"Ethereal Rhapsody\",\n   \"duration\": 234,\n   \"artists\": [\n    {\n     \"id\": 36,\n     \"name\": \"Noah Bennett\"\n    },\n    {\n     \"id\": 19,\n     \"name\": \"Ethan Wallace\"\n    },\n    {\n     \"id\": 35,\n     \"name\": \"Nova Harmony\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 20,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_album\",\"args\":\"{\\\"album_id\\\":14}\"}",
+      "result": "{\n \"album_id\": 14,\n \"title\": \"Midnight Serenade\",\n \"genre\": \"rock\",\n \"artists\": [\n  {\n   \"id\": 34,\n   \"name\": \"Lily Moon\"\n  },\n  {\n   \"id\": 9,\n   \"name\": \"Zoey James\"\n  }\n ],\n \"rating\": 3.4,\n \"like_count\": 44,\n \"review_count\": 14,\n \"release_date\": \"2022-02-21T17:34:33\",\n \"shareable_link\": \"https://spotify.com/albums/14\",\n \"songs\": [\n  {\n   \"id\": 67,\n   \"title\": \"The Echoes of a Silent Heart\",\n   \"album_id\": 14,\n   \"album_title\": \"Midnight Serenade\",\n   \"duration\": 240,\n   \"artists\": [\n    {\n     \"id\": 34,\n     \"name\": \"Lily Moon\"\n    },\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 68,\n   \"title\": \"Lost in the Wilderness of Love\",\n   \"album_id\": 14,\n   \"album_title\": \"Midnight Serenade\",\n   \"duration\": 280,\n   \"artists\": [\n    {\n     \"id\": 34,\n     \"name\": \"Lily Moon\"\n    },\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 69,\n   \"title\": \"Whispers of a Forgotten Love\",\n   \"album_id\": 14,\n   \"album_title\": \"Midnight Serenade\",\n   \"duration\": 285,\n   \"artists\": [\n    {\n     \"id\": 34,\n     \"name\": \"Lily Moon\"\n    },\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 20,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"album_id\\\":12}\",\"name\":\"spotify__show_album\"}",
+      "result": "{\n \"album_id\": 12,\n \"title\": \"Astral Journey\",\n \"genre\": \"rock\",\n \"artists\": [\n  {\n   \"id\": 9,\n   \"name\": \"Zoey James\"\n  }\n ],\n \"rating\": 3.7,\n \"like_count\": 43,\n \"review_count\": 16,\n \"release_date\": \"2021-10-02T22:00:08\",\n \"shareable_link\": \"https://spotify.com/albums/12\",\n \"songs\": [\n  {\n   \"id\": 58,\n   \"title\": \"Cursed Love\",\n   \"album_id\": 12,\n   \"album_title\": \"Astral Journey\",\n   \"duration\": 214,\n   \"artists\": [\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 59,\n   \"title\": \"Love's Decline\",\n   \"album_id\": 12,\n   \"album_title\": \"Astral Journey\",\n   \"duration\": 212,\n   \"artists\": [\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 60,\n   \"title\": \"The Haunting Echo of Goodbye\",\n   \"album_id\": 12,\n   \"album_title\": \"Astral Journey\",\n   \"duration\": 224,\n   \"artists\": [\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 61,\n   \"title\": \"Ocean Eyes\",\n   \"album_id\": 12,\n   \"album_title\": \"Astral Journey\",\n   \"duration\": 271,\n   \"artists\": [\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 62,\n   \"title\": \"Crimson Sunset Sonata\",\n   \"album_id\": 12,\n   \"album_title\": \"Astral Journey\",\n   \"duration\": 255,\n   \"artists\": [\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 21,
+      "text": null,
+      "usage": {
+        "completion_tokens": 1605,
+        "prompt_tokens": 25406,
+        "total_tokens": 27011,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 22105,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_song_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":228}\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":125}\",\"name\":\"spotify__remove_song_from_library\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_song_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":257}\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_song_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":105}\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":319}\",\"name\":\"spotify__remove_song_from_library\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_song_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":214}\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":143}\",\"name\":\"spotify__remove_song_from_library\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_song_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":139}\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":259}\",\"name\":\"spotify__remove_song_from_library\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_song_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":310}\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 21,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"song_id\\\":23}\",\"name\":\"spotify__remove_song_from_library\"}",
+      "result": "{\"message\": \"Song removed from library.\"}\n"
+    },
+    {
+      "step": 22,
+      "text": null,
+      "usage": {
+        "completion_tokens": 1011,
+        "prompt_tokens": 27265,
+        "total_tokens": 28276,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 24076,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 22,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":7}\",\"name\":\"spotify__remove_album_from_library\"}",
+      "result": "{\"message\": \"Album removed from library.\"}\n"
+    },
+    {
+      "step": 22,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":4}\",\"name\":\"spotify__remove_album_from_library\"}",
+      "result": "{\"message\": \"Album removed from library.\"}\n"
+    },
+    {
+      "step": 22,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_album_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":16}\"}",
+      "result": "{\"message\": \"Album removed from library.\"}\n"
+    },
+    {
+      "step": 22,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_album_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":8}\"}",
+      "result": "{\"message\": \"Album removed from library.\"}\n"
+    },
+    {
+      "step": 22,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_album_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":6}\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__remove_album_from_library(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 6}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"You are either not authorized to access this spotify API endpoint or your access token is missing, invalid or expired.\"}"
+    },
+    {
+      "step": 22,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_album_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnj0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":14}\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__remove_album_from_library(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnj0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 14}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 401:\n{\"message\":\"You are either not authorized to access this spotify API endpoint or your access token is missing, invalid or expired.\"}"
+    },
+    {
+      "step": 22,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc\\\",\\\"album_id\\\":12}\",\"name\":\"spotify__remove_album_from_library\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__remove_album_from_library(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.hcqCpRubJLnD0Rb1w1X-ajbN-E6xGyw-mnYWYV9rTqc', 'album_id': 12}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 422:\n{\"message\":\"The album is not in your library.\"}"
+    },
+    {
+      "step": 23,
+      "text": null,
+      "usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 29149,
+        "total_tokens": 29192,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 26071,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 23,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__login\",\"args\":\"{\\\"password\\\":\\\"rvP5MvY\\\",\\\"username\\\":\\\"joseharr@gmail.com\\\"}\"}",
+      "result": "{\n \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjc0MX0.78RRpKKCjAYqRYDIopI29jkoA9F8RGGpsE_ZQ17p04Q\",\n \"token_type\": \"Bearer\"\n}\n"
+    },
+    {
+      "step": 24,
+      "text": null,
+      "usage": {
+        "completion_tokens": 293,
+        "prompt_tokens": 29331,
+        "total_tokens": 29624,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 26065,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 24,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjc0MX0.78RRpKKCjAYqRYDIopI29jkoA9F8RGGpsE_ZQ17p04Q\\\",\\\"album_id\\\":6}\",\"name\":\"spotify__remove_album_from_library\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__remove_album_from_library(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjc0MX0.78RRpKKCjAYqRYDIopI29jkoA9F8RGGpsE_ZQ17p04Q', 'album_id': 6}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 422:\n{\"message\":\"The album is not in your library.\"}"
+    },
+    {
+      "step": 24,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_album_from_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjc0MX0.78RRpKKCjAYqRYDIopI29jkoA9F8RGGpsE_ZQ17p04Q\\\",\\\"album_id\\\":14}\"}",
+      "result": "Execution failed. Traceback:\n  File \"<python-input>\", line 1, in <module>\n    print(spotify__remove_album_from_library(**{'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjc0MX0.78RRpKKCjAYqRYDIopI29jkoA9F8RGGpsE_ZQ17p04Q', 'album_id': 14}))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nException: Response status code is 422:\n{\"message\":\"The album is not in your library.\"}"
+    },
+    {
+      "step": 25,
+      "text": null,
+      "usage": {
+        "completion_tokens": 145,
+        "prompt_tokens": 30130,
+        "total_tokens": 30275,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 28071,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 25,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjc0MX0.78RRpKKCjAYqRYDIopI29jkoA9F8RGGpsE_ZQ17p04Q\\\",\\\"page_limit\\\":20}\",\"name\":\"spotify__show_album_library\"}",
+      "result": "[\n {\n  \"album_id\": 1,\n  \"title\": \"Echo Chamber Chronicles\",\n  \"genre\": \"EDM\",\n  \"artists\": [\n   {\n    \"id\": 3,\n    \"name\": \"Jasper Skye\"\n   },\n   {\n    \"id\": 26,\n    \"name\": \"Isabella Cruz\"\n   },\n   {\n    \"id\": 6,\n    \"name\": \"Seraphina Dawn\"\n   }\n  ],\n  \"rating\": 3.2,\n  \"like_count\": 35,\n  \"review_count\": 12,\n  \"release_date\": \"2022-10-29T01:54:53\",\n  \"song_ids\": [\n   1,\n   2,\n   3,\n   4,\n   5,\n   6,\n   7\n  ],\n  \"added_at\": \"2023-03-22T22:17:53\"\n },\n {\n  \"album_id\": 18,\n  \"title\": \"Echoes of Eternity\",\n  \"genre\": \"classical\",\n  \"artists\": [\n   {\n    \"id\": 33,\n    \"name\": \"Felix Blackwood\"\n   }\n  ],\n  \"rating\": 3.7,\n  \"like_count\": 37,\n  \"review_count\": 21,\n  \"release_date\": \"2022-07-06T10:24:33\",\n  \"song_ids\": [\n   80,\n   81,\n   82\n  ],\n  \"added_at\": \"2022-12-23T20:27:32\"\n },\n {\n  \"album_id\": 17,\n  \"title\": \"Enchanted Melodies\",\n  \"genre\": \"classical\",\n  \"artists\": [\n   {\n    \"id\": 12,\n    \"name\": \"Mia Sullivan\"\n   },\n   {\n    \"id\": 27,\n    \"name\": \"Carter Knight\"\n   }\n  ],\n  \"rating\": 3.6,\n  \"like_count\": 41,\n  \"review_count\": 17,\n  \"release_date\": \"2020-10-15T13:57:09\",\n  \"song_ids\": [\n   77,\n   78,\n   79\n  ],\n  \"added_at\": \"2022-08-31T00:59:11\"\n }\n]\n"
+    },
+    {
+      "step": 26,
+      "text": null,
+      "usage": {
+        "completion_tokens": 145,
+        "prompt_tokens": 30918,
+        "total_tokens": 31063,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 28077,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 26,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_song_library\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2pvc2VoYXJyQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjc0MX0.78RRpKKCjAYqRYDIopI29jkoA9F8RGGpsE_ZQ17p04Q\\\",\\\"page_limit\\\":20}\"}",
+      "result": "[\n {\n  \"song_id\": 16,\n  \"title\": \"Yearning for a Glimpse of Heaven\",\n  \"album_id\": 4,\n  \"album_title\": \"Neon Echoes\",\n  \"duration\": 207,\n  \"artists\": [\n   {\n    \"id\": 36,\n    \"name\": \"Noah Bennett\"\n   }\n  ],\n  \"added_at\": \"2023-04-10T06:13:57\"\n },\n {\n  \"song_id\": 14,\n  \"title\": \"Memories Etched in Melancholy\",\n  \"album_id\": 3,\n  \"album_title\": \"Nocturnal Melodies\",\n  \"duration\": 196,\n  \"artists\": [\n   {\n    \"id\": 16,\n    \"name\": \"Apollo Serenade\"\n   },\n   {\n    \"id\": 2,\n    \"name\": \"Phoenix Rivers\"\n   }\n  ],\n  \"added_at\": \"2023-03-01T01:49:57\"\n },\n {\n  \"song_id\": 149,\n  \"title\": \"Ephemeral Beauty\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 234,\n  \"artists\": [\n   {\n    \"id\": 11,\n    \"name\": \"Eliana Harper\"\n   }\n  ],\n  \"added_at\": \"2022-09-09T20:35:34\"\n },\n {\n  \"song_id\": 317,\n  \"title\": \"Trapped in a Daydream\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 225,\n  \"artists\": [\n   {\n    \"id\": 35,\n    \"name\": \"Nova Harmony\"\n   }\n  ],\n  \"added_at\": \"2022-08-21T09:11:16\"\n },\n {\n  \"song_id\": 89,\n  \"title\": \"Glass Castles\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 224,\n  \"artists\": [\n   {\n    \"id\": 2,\n    \"name\": \"Phoenix Rivers\"\n   }\n  ],\n  \"added_at\": \"2022-07-31T06:14:04\"\n }\n]\n"
+    },
+    {
+      "step": 27,
+      "text": null,
+      "usage": {
+        "completion_tokens": 22,
+        "prompt_tokens": 31699,
+        "total_tokens": 31721,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 28082,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 27,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"supervisor__complete_task\"}",
+      "result": "{\"name\": \"supervisor__complete_task\", \"description\": \"Mark the currently active task as complete with the given answer.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"answer\": {\"description\": \"The answer to the task instruction. Pass it if and only if the task requests an answer, e.g., 'How many songs are in the Spotify queue?'. The answer must be concise, such as a number, a yes/no, or a specific entity, name, etc, e.g., '10' in this case. If the task is not a question, e.g., 'Start my Spotify music player.', the answer must be left to the default value, i.e., None.\", \"default\": null, \"anyOf\": [{\"type\": \"number\"}, {\"type\": \"integer\"}, {\"type\": \"string\"}]}, \"status\": {\"type\": \"string\", \"enum\": [\"success\", \"fail\"], \"description\": \"Mark the task complete.\", \"default\": \"success\"}}, \"required\": []}}"
+    },
+    {
+      "step": 28,
+      "text": null,
+      "usage": {
+        "completion_tokens": 30,
+        "prompt_tokens": 31954,
+        "total_tokens": 31984,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 28078,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 28,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"status\\\":\\\"success\\\"}\",\"name\":\"supervisor__complete_task\"}",
+      "result": "{\"message\": \"Marked the active task complete.\"}\n"
+    }
+  ],
+  "report": "<appworld.evaluator.TestTracker object at 0x732aa12b6450>"
+}
