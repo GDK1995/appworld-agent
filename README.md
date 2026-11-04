@@ -9,7 +9,7 @@ AppWorld 0.2.0.dev0, установлен из клона `https://github.com/St
 2. Клонировать этот репозиторий и установить зависимости агента в то же окружение:
 
    ```bash
-   git clone https://github.com/GDK1995/appworld-agent.git ~/appworld-agent
+   git clone https://github.com/GDK1995/appworld-agent.git
    cd ~/appworld-agent
    pip install -r requirements.txt
    ```
