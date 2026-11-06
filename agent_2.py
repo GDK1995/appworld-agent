@@ -18,7 +18,7 @@ ALLOWED_APPS = {"supervisor", "spotify"}
 MAX_LLM_CALLS = CFG["max_llm_calls"]
 MAX_API_CALLS = CFG["max_api_calls"]
 SEPARATOR = "__"
-# TRAIN_TASK_IDS = ["b7a9ee9_3", "ce359b5_2", "692c77d_2", "b0a8eae_2", "22cc237_2", "29caf6f_3", "22cc237_2", "229360a_3", ""]
+# TRAIN_TASK_IDS = ["b7a9ee9_3", "ce359b5_2", "692c77d_2", "b0a8eae_2", "22cc237_2", "29caf6f_3", "229360a_3", "6104387_3", "22cc237_1", "b0a8eae_1"]
 TOOLS = [
     {
         "type": "function",
