@@ -22,9 +22,9 @@ AppWorld 0.2.0.dev0, установлен из клона `https://github.com/St
 
 ## Версии
 
-- AppWorld: `0.2.0.dev0`, установлен из клона, коммит `<git rev-parse HEAD в папке appworld>`
-- Python: `<python --version>`
-- openai: `<pip show openai>`
+- AppWorld: `0.2.0.dev0`
+- Python: `Python 3.11.17`
+- openai: `openai 3.37.0`
 
 ## Конфиг модели
 

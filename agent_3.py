@@ -98,42 +98,6 @@ def get_func_doc(docs, f_name, seen_before_complete_docs):
         return f"Error: unknown function '{f_name}'. Use app_func_list to see real names."
     return json.dumps(f, ensure_ascii=False)
 
-def execute_tool(world, docs, name, raw_args, seen_before_complete_docs):
-    try:
-        args = json.loads(raw_args or "{}")
-    except json.JSONDecodeError:
-        return "Error: arguments are not valid JSON."
-    if name == "app_func_list":
-        return app_func_list(docs, args.get("app", ""))
-    if name == "get_func_doc":
-        return get_func_doc(docs, args.get("name", ""), seen_before_complete_docs)
-    if name == "get_current_time":
-        return get_current_time(world)
-    if name == "call_function":
-        fn = args.get("name", "")
-        if fn not in docs:
-            return (f"Error: '{fn}' is not an app function. Find names with app_func_list; "
-                    "app_func_list and get_func_doc are separate tools.")
-
-        if fn == f"supervisor{SEPARATOR}complete_task" and fn not in seen_before_complete_docs:
-            return GATE_MSG
-        
-        try:
-            fn_args = args.get("args", {})
-            if isinstance(fn_args, str):
-                fn_args = json.loads(fn_args or "{}")
-            if not isinstance(fn_args, dict):
-                return "Error: 'args' must be a JSON object."
-        except json.JSONDecodeError:
-            return "Error: 'args' must be a JSON object string."
-
-        err = check_args(docs, fn, fn_args)
-        if err:
-           return err
-        out = world.execute(f"print({fn}(**{fn_args!r}))")
-        return str(out)
-    return f"Error: unknown tool '{name}'."
-
 def get_current_time(world):
     return str(world.execute("print(apis.phone.get_current_date_and_time())"))
 
@@ -173,6 +137,62 @@ def check_args(docs, fn_name, fn_args):
         return (f"Error: {'; '.join(parts)}. "
                 f"Allowed parameters of {fn_name}: {list(props)}.")
     return None
+
+def page_info(docs, fn_name, fn_args):
+    props = docs[fn_name].get("parameters", {}).get("properties", {})
+    if "page_index" in props and "page_limit" in props:
+        limit = fn_args.get("page_limit", props["page_limit"].get("default"))
+        return limit
+    return None
+
+def execute_tool(world, docs, name, raw_args, seen_before_complete_docs):
+    try:
+        args = json.loads(raw_args or "{}")
+    except json.JSONDecodeError:
+        return "Error: arguments are not valid JSON."
+    if name == "app_func_list":
+        return app_func_list(docs, args.get("app", ""))
+    if name == "get_func_doc":
+        return get_func_doc(docs, args.get("name", ""), seen_before_complete_docs)
+    if name == "get_current_time":
+        return get_current_time(world)
+    if name == "call_function":
+        fn = args.get("name", "")
+
+        if fn not in docs:
+            return (f"Error: '{fn}' is not an app function. Find names with app_func_list; "
+                    "app_func_list and get_func_doc are separate tools.")
+
+        if fn == f"supervisor{SEPARATOR}complete_task" and fn not in seen_before_complete_docs:
+            return GATE_MSG
+        
+        try:
+            fn_args = args.get("args", {})
+            if isinstance(fn_args, str):
+                fn_args = json.loads(fn_args or "{}")
+            if not isinstance(fn_args, dict):
+                return "Error: 'args' must be a JSON object."
+        except json.JSONDecodeError:
+            return "Error: 'args' must be a JSON object string."
+
+        err = check_args(docs, fn, fn_args)
+        if err:
+           return err
+        
+        out = world.execute(f"print({fn}(**{fn_args!r}))")
+
+        limit = page_info(docs, fn, fn_args)
+        if limit is not None:
+            try:
+                items = json.loads(out)
+            except json.JSONDecodeError:
+                return out
+
+            if len(items) == limit:
+                return out + f"\n[Note: the page is full ({limit} items), there may be more. Request next page.]"
+
+        return str(out)
+    return f"Error: unknown tool '{name}'. Available tools: app_func_list, get_func_doc, call_function, get_current_time."
 
 def run_task(task, path):
     stop = "max_llm_calls"
