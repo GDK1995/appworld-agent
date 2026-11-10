@@ -5,3 +5,4 @@ max_llm_calls: 30
 max_api_calls: 100
 sleep_between_calls: 4
 budget_max_total_tokens: 19000000
+seed: 42

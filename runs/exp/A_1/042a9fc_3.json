@@ -1,0 +1,438 @@
+{
+  "task_id": "042a9fc_3",
+  "stop": "completed",
+  "log": [
+    {
+      "instruction": "My roommates and I are preparing a playlist for a roadtrip together. I prepared the initial playlist on Spotify and shared it with them on phone messages. They have replied with suggested changes. Please update this playlist accordingly."
+    },
+    {
+      "step": 0,
+      "text": null,
+      "usage": {
+        "completion_tokens": 36,
+        "prompt_tokens": 747,
+        "total_tokens": 783,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 0,
+      "call": "app_func_list",
+      "args": "{\"app\":\"spotify\"}",
+      "result": "spotify__show_account: Show your account information. Unlike show_profile, this includes private information.\nspotify__signup: Sign up to create account.\nspotify__delete_account: Delete your account.\nspotify__update_account_name: Update your first or last name in the account profile.\nspotify__login: Login to your account.\nspotify__logout: Logout from your account.\nspotify__send_verification_code: Send account verification code to your email address.\nspotify__verify_account: Verify your account using the verification code sent to your email address.\nspotify__send_password_reset_code: Send password reset code to your email address.\nspotify__reset_password: Reset your password using the password reset code sent to your email address.\nspotify__show_profile: Show public profile information of a user.\nspotify__search_users: Search users by name or email address.\nspotify__show_genres: Show the list of all music genres.\nspotify__search_songs: Search for songs with a query.\nspotify__show_song: Get details of a specific song.\nspotify__show_song_privates: Show information about the song that is private to the user.\nspotify__like_song: Like a song.\nspotify__unlike_song: Unlike a song.\nspotify__show_liked_songs: Get a list of songs you have liked.\nspotify__search_albums: Search for albums with a query.\nspotify__show_album: Get details of a specific album.\nspotify__show_album_privates: Show information about the album that is private to the user.\nspotify__like_album: Like a album.\nspotify__unlike_album: Unlike a album.\nspotify__show_liked_albums: Get a list of albums you have liked.\nspotify__show_playlist_library: Search or show a list of playlists in your playlist library.\nspotify__search_playlists: Search for playlists with a query. It will search over all public playlists and your own private playlists. If the access token is not provided, it will only search public playlists.\nspotify__create_playlist: Create a new playlist.\nspotify__show_playlist: Get detailed information about a specific playlist. You can view your own playlists or others' playlists if they are public.\nspotify__update_playlist: Update a playlist title or privacy.\nspotify__delete_playlist: Delete a playlist.\nspotify__show_playlist_privates: Show information about the playlist that is private to the user.\nspotify__like_playlist: Like a playlist.\nspotify__unlike_playlist: Unlike a playlist.\nspotify__show_liked_playlists: Get a list of playlists you have liked.\nspotify__search_artists: Search for artists with a query.\nspotify__show_artist: Get details of a specific artist.\nspotify__show_artist_following: Show if the user is following the artist.\nspotify__show_song_library: Search or show a list of songs in your song library.\nspotify__add_song_to_library: Add a song to your song library.\nspotify__remove_song_from_library: Remove a song from your song library.\nspotify__show_album_library: Search or show a list of albums in your album library.\nspotify__add_album_to_library: Add an album to your album library.\nspotify__remove_album_from_library: Remove an album from your album library.\nspotify__add_song_to_playlist: Add a song to a playlist.\nspotify__remove_song_from_playlist: Remove a song from a playlist.\nspotify__show_downloaded_songs: Search or show a list of your downloaded songs.\nspotify__download_song: Download a song.\nspotify__remove_downloaded_song: Remove a song from downloads.\nspotify__show_following_artists: Search or show a list of artists you are following.\nspotify__follow_artist: Follow an artist.\nspotify__unfollow_artist: Unfollow an artist.\nspotify__show_song_reviews: Search or show a list of reviews for a song.\nspotify__review_song: Rate or review a song.\nspotify__update_song_review: Update a song review.\nspotify__delete_song_review: Delete a song review.\nspotify__show_song_review: Show a song review.\nspotify__show_album_reviews: Search or show a list of reviews for an album.\nspotify__review_album: Rate or review an album.\nspotify__update_album_review: Update an album review.\nspotify__delete_album_review: Delete an album review.\nspotify__show_album_review: Show an album review.\nspotify__show_playlist_reviews: Search or show a list of reviews for your playlist or others' public playlist.\nspotify__review_playlist: Rate or review a playlist.\nspotify__update_playlist_review: Update a playlist review.\nspotify__delete_playlist_review: Delete a playlist review.\nspotify__show_playlist_review: Show a playlist review.\nspotify__show_payment_cards: Get a list of users payment cards.\nspotify__add_payment_card: Add a new payment card.\nspotify__show_payment_card: Get details of a payment card.\nspotify__update_payment_card: Update payment card information.\nspotify__delete_payment_card: Delete payment card information.\nspotify__show_current_song: Show details of the current song on the queue.\nspotify__play_music: Play music based on various criteria. You can pass, at most, any one of queue_position, song_id, album_id or playlist_id. If one of song_id, album_id or playlist_id is passed, that song, album or playlist will be added to the queue and played. Otherwise, the queue will remain unchanged. If queue_position is passed, the song at that position in the queue will be played. If none is passed, the current song in the queue will be played.\nspotify__pause_music: Pause the currently playing song.\nspotify__previous_song: Go to the previous song in the song queue.\nspotify__next_song: Go to the next song in the song queue.\nspotify__move_song_in_queue: Move a song in the queue to a new position.\nspotify__seek_song: Seek the current song to the given number of seconds.\nspotify__loop_song: Set whether to loop the current song.\nspotify__shuffle_song_queue: Shuffle songs in the music player queue.\nspotify__show_song_queue: Get the music player song queue. Songs are played in the order of the queue in a cycle.\nspotify__add_to_queue: Add a song, album or playlist to the music player song queue.\nspotify__clear_song_queue: Clear the music player song queue.\nspotify__remove_song_from_queue: Remove a song at the given position from the music player song queue.\nspotify__show_volume: Get the volume level of the music player.\nspotify__set_volume: Set the volume level of the music player.\nspotify__show_recommendations: Get personalized song recommendations for the user.\nspotify__show_premium_plans: Show information about premium plans available.\nspotify__subscribe_premium: Subscribe to premium membership.\nspotify__show_premium_subscriptions: Show your premium subscription history.\nspotify__download_premium_subscription_receipt: Download the receipt for a premium subscription."
+    },
+    {
+      "step": 0,
+      "call": "app_func_list",
+      "args": "{\"app\":\"phone\"}",
+      "result": "phone__show_account: Show your account information. Unlike show_profile, this includes private information.\nphone__signup: Sign up to create account.\nphone__delete_account: Delete your account.\nphone__update_account_name: Update your first or last name in the account profile.\nphone__login: Login to your account.\nphone__logout: Logout from your account.\nphone__send_password_reset_code: Send password reset code to your phone number.\nphone__reset_password: Reset your password using the password reset code sent to your email address.\nphone__show_profile: Show public profile information of a user.\nphone__show_contact_relationships: Get a list of all relationships available in your contact book.\nphone__search_contacts: Search your contact book for relatives' information.\nphone__add_contact: Add a new contact.\nphone__update_contact: Update contact information.\nphone__delete_contact: Delete contact information.\nphone__show_text_message_window: Show text messages with a contact around a given date and time.\nphone__search_text_messages: Show or search your text messages.\nphone__show_text_message: Show text message details.\nphone__delete_text_message: Delete a text message.\nphone__send_text_message: Send a text message on the given phone number.\nphone__show_alarms: Get a list of alarms.\nphone__create_alarm: Create a new alarm.\nphone__show_alarm: Show alarm details.\nphone__update_alarm: Update an alarm's settings.\nphone__delete_alarm: Delete an alarm.\nphone__show_voice_message_window: Show voice messages with a contact around a given date and time.\nphone__search_voice_messages: Show or search text voice_messages between the user and a contact.\nphone__show_voice_message: Show voice message details.\nphone__delete_voice_message: Delete a voice message.\nphone__send_voice_message: Send a voice message on the given phone number.\nphone__get_current_date_and_time: Show current date and time."
+    },
+    {
+      "step": 1,
+      "text": null,
+      "usage": {
+        "completion_tokens": 56,
+        "prompt_tokens": 2915,
+        "total_tokens": 2971,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 1,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_playlist_library\",\"args\":\"{}\"}",
+      "result": "Error: missing required parameters ['access_token']. Allowed parameters of spotify__show_playlist_library: ['query', 'page_index', 'page_limit', 'is_public', 'sort_by', 'access_token']."
+    },
+    {
+      "step": 1,
+      "call": "call_function",
+      "args": "{\"name\":\"phone__search_text_messages\",\"args\":\"{}\"}",
+      "result": "Error: missing required parameters ['access_token']. Allowed parameters of phone__search_text_messages: ['query', 'phone_number', 'only_latest_per_contact', 'page_index', 'page_limit', 'sort_by', 'access_token']."
+    },
+    {
+      "step": 2,
+      "text": null,
+      "usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 3103,
+        "total_tokens": 3155,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 2,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__show_account\",\"args\":\"{}\"}",
+      "result": "Error: missing required parameters ['access_token']. Allowed parameters of spotify__show_account: ['access_token']."
+    },
+    {
+      "step": 2,
+      "call": "call_function",
+      "args": "{\"name\":\"phone__show_account\",\"args\":\"{}\"}",
+      "result": "Error: missing required parameters ['access_token']. Allowed parameters of phone__show_account: ['access_token']."
+    },
+    {
+      "step": 3,
+      "text": null,
+      "usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 3228,
+        "total_tokens": 3268,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 3,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__login\"}",
+      "result": "{\"name\": \"spotify__login\", \"description\": \"Login to your account.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"username\": {\"type\": \"string\", \"description\": \"Your account email.\"}, \"password\": {\"type\": \"string\", \"description\": \"Your account password.\"}}, \"required\": [\"username\", \"password\"]}}"
+    },
+    {
+      "step": 3,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"phone__login\"}",
+      "result": "{\"name\": \"phone__login\", \"description\": \"Login to your account.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"username\": {\"type\": \"string\", \"description\": \"Your account phone_number.\"}, \"password\": {\"type\": \"string\", \"description\": \"Your account password.\"}}, \"required\": [\"username\", \"password\"]}}"
+    },
+    {
+      "step": 4,
+      "text": null,
+      "usage": {
+        "completion_tokens": 18,
+        "prompt_tokens": 3447,
+        "total_tokens": 3465,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 4,
+      "call": "app_func_list",
+      "args": "{\"app\":\"supervisor\"}",
+      "result": "supervisor__show_active_task: Show the currently active task assigned to you by the supervisor.\nsupervisor__complete_task: Mark the currently active task as complete with the given answer.\nsupervisor__show_profile: Show your supervisor's profile information.\nsupervisor__show_addresses: Show your supervisor's addresses.\nsupervisor__show_payment_cards: Show your supervisor's payment_cards.\nsupervisor__show_account_passwords: Show your supervisor's app account passwords."
+    },
+    {
+      "step": 5,
+      "text": null,
+      "usage": {
+        "completion_tokens": 29,
+        "prompt_tokens": 3585,
+        "total_tokens": 3614,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 5,
+      "call": "call_function",
+      "args": "{\"name\":\"supervisor__show_account_passwords\",\"args\":\"{}\"}",
+      "result": "[\n {\n  \"account_name\": \"amazon\",\n  \"password\": \"*07Q)d8\"\n },\n {\n  \"account_name\": \"file_system\",\n  \"password\": \"lB27q[v\"\n },\n {\n  \"account_name\": \"gmail\",\n  \"password\": \"*-Q[n]3\"\n },\n {\n  \"account_name\": \"phone\",\n  \"password\": \"8qAz[-V\"\n },\n {\n  \"account_name\": \"simple_note\",\n  \"password\": \"WWC7[NS\"\n },\n {\n  \"account_name\": \"splitwise\",\n  \"password\": \"[v(HuhI\"\n },\n {\n  \"account_name\": \"spotify\",\n  \"password\": \"[rwYl}H\"\n },\n {\n  \"account_name\": \"todoist\",\n  \"password\": \"*kt4@dA\"\n },\n {\n  \"account_name\": \"venmo\",\n  \"password\": \"%iLp@(g\"\n }\n]\n"
+    },
+    {
+      "step": 6,
+      "text": null,
+      "usage": {
+        "completion_tokens": 26,
+        "prompt_tokens": 3874,
+        "total_tokens": 3900,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      }
+    },
+    {
+      "step": 6,
+      "call": "call_function",
+      "args": "{\"name\":\"supervisor__show_profile\",\"args\":\"{}\"}",
+      "result": "{\n \"first_name\": \"Lindsey\",\n \"last_name\": \"Simpson\",\n \"email\": \"lindseysimpson@gmail.com\",\n \"phone_number\": \"3567801924\",\n \"birthday\": \"1993-11-23\",\n \"sex\": \"female\"\n}\n"
+    },
+    {
+      "step": 7,
+      "text": null,
+      "usage": {
+        "completion_tokens": 27,
+        "prompt_tokens": 3991,
+        "total_tokens": 4018,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1972,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 7,
+      "call": "call_function",
+      "args": "{\"args\":\"{password:\",\"name\":\"spotify__login\"}",
+      "result": "Error: 'args' must be a JSON object string."
+    },
+    {
+      "step": 8,
+      "text": null,
+      "usage": {
+        "completion_tokens": 89,
+        "prompt_tokens": 4042,
+        "total_tokens": 4131,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1970,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 8,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"password\\\":\\\"[rwYl}H\\\",\\\"username\\\":\\\"lindseysimpson@gmail.com\\\"}\",\"name\":\"spotify__login\"}",
+      "result": "{\n \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2xpbmRzZXlzaW1wc29uQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.gIJ1GnGXk5HzmTJ0_c0NVf3FKpDKuvmSQNffuuVnIxQ\",\n \"token_type\": \"Bearer\"\n}\n"
+    },
+    {
+      "step": 8,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"password\\\":\\\"8qAz[-V\\\",\\\"username\\\":\\\"3567801924\\\"}\",\"name\":\"phone__login\"}",
+      "result": "{\n \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwaG9uZSszNTY3ODAxOTI0IiwiZXhwIjoxNjg0NDEyNzQxfQ.Asti6vZOCwNve5Wnx9glBYjkAoaXXU3Y3IdclC5r0Ec\",\n \"token_type\": \"Bearer\"\n}\n"
+    },
+    {
+      "step": 9,
+      "text": null,
+      "usage": {
+        "completion_tokens": 263,
+        "prompt_tokens": 4395,
+        "total_tokens": 4658,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1968,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 9,
+      "call": "call_function",
+      "args": "{\"name\":\"phone__search_text_messages\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwaG9uZSszNTY3ODAxOTI0IiwiZXhwIjoxNjg0NDEyNzQxfQ.Asti6vZOCwNve5Wnx9glBYjkAoaXXU3Y3IdclC5r0Ec\\\"}\"}",
+      "result": "[\n {\n  \"text_message_id\": 16804,\n  \"sender\": {\n   \"contact_id\": 1262,\n   \"name\": \"Jose Harrison\",\n   \"phone_number\": \"2474975253\"\n  },\n  \"receiver\": {\n   \"contact_id\": null,\n   \"name\": \"Lindsey Simpson\",\n   \"phone_number\": \"3567801924\"\n  },\n  \"message\": \"Yes! I have a few suggestions.\\nadd => Where Shadows Come to Life by Olivia Roberts\\nremove => Paper Planes by Seraphina Dawn\\n\",\n  \"sent_at\": \"2023-05-17T21:34:23\"\n },\n {\n  \"text_message_id\": 16802,\n  \"sender\": {\n   \"contact_id\": 1261,\n   \"name\": \"Chris Mccoy\",\n   \"phone_number\": \"5584932120\"\n  },\n  \"receiver\": {\n   \"contact_id\": null,\n   \"name\": \"Lindsey Simpson\",\n   \"phone_number\": \"3567801924\"\n  },\n  \"message\": \"Yes! I have a few suggestions.\\nadd => The Enigma of Love by Mia Sullivan\\nremove => City of Fallen Angels by Hazel Winter\\n\",\n  \"sent_at\": \"2023-05-17T20:51:44\"\n },\n {\n  \"text_message_id\": 16800,\n  \"sender\": {\n   \"contact_id\": 1263,\n   \"name\": \"Paul Miller\",\n   \"phone_number\": \"3379617841\"\n  },\n  \"receiver\": {\n   \"contact_id\": null,\n   \"name\": \"Lindsey Simpson\",\n   \"phone_number\": \"3567801924\"\n  },\n  \"message\": \"No suggestions, looks good to me!\",\n  \"sent_at\": \"2023-05-17T20:24:14\"\n },\n {\n  \"text_message_id\": 16793,\n  \"sender\": {\n   \"contact_id\": null,\n   \"name\": \"Lindsey Simpson\",\n   \"phone_number\": \"3567801924\"\n  },\n  \"receiver\": {\n   \"contact_id\": 1261,\n   \"name\": \"Chris Mccoy\",\n   \"phone_number\": \"5584932120\"\n  },\n  \"message\": \"I am putting together this playlist for our roadtrip => https://spotify.com/playlists/654. Do you have any suggestions?\",\n  \"sent_at\": \"2023-05-17T19:08:46\"\n },\n {\n  \"text_message_id\": 16795,\n  \"sender\": {\n   \"contact_id\": null,\n   \"name\": \"Lindsey Simpson\",\n   \"phone_number\": \"3567801924\"\n  },\n  \"receiver\": {\n   \"contact_id\": 1262,\n   \"name\": \"Jose Harrison\",\n   \"phone_number\": \"2474975253\"\n  },\n  \"message\": \"I am putting together this playlist for our roadtrip => https://spotify.com/playlists/654. Do you have any suggestions?\",\n  \"sent_at\": \"2023-05-17T19:08:46\"\n }\n]\n"
+    },
+    {
+      "step": 9,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2xpbmRzZXlzaW1wc29uQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.gIJ1GnGXk5HzmTJ0_c0NVf3FKpDKuvmSQNffuuVnIxQ\\\"}\",\"name\":\"spotify__show_playlist_library\"}",
+      "result": "[\n {\n  \"playlist_id\": 654,\n  \"title\": \"Road Trip Playlist\",\n  \"is_public\": true,\n  \"rating\": 0.0,\n  \"like_count\": 0,\n  \"review_count\": 0,\n  \"owner\": {\n   \"name\": \"Lindsey Simpson\",\n   \"email\": \"lindseysimpson@gmail.com\"\n  },\n  \"created_at\": \"2023-05-18T12:00:00\",\n  \"song_ids\": [\n   44,\n   55,\n   61,\n   67,\n   84,\n   113,\n   116,\n   124,\n   133,\n   134,\n   155,\n   250,\n   260,\n   281,\n   282,\n   290,\n   295,\n   307,\n   309,\n   315,\n   319\n  ]\n },\n {\n  \"playlist_id\": 374,\n  \"title\": \"Yoga Retreat: Mind & Body\",\n  \"is_public\": false,\n  \"rating\": 0.0,\n  \"like_count\": 1,\n  \"review_count\": 0,\n  \"owner\": {\n   \"name\": \"Lindsey Simpson\",\n   \"email\": \"lindseysimpson@gmail.com\"\n  },\n  \"created_at\": \"2023-04-08T18:50:01\",\n  \"song_ids\": [\n   34,\n   59,\n   120,\n   219,\n   287\n  ]\n },\n {\n  \"playlist_id\": 373,\n  \"title\": \"Blues & Brews: Laid Back Tracks\",\n  \"is_public\": true,\n  \"rating\": 0.0,\n  \"like_count\": 0,\n  \"review_count\": 0,\n  \"owner\": {\n   \"name\": \"Lindsey Simpson\",\n   \"email\": \"lindseysimpson@gmail.com\"\n  },\n  \"created_at\": \"2023-02-24T06:38:23\",\n  \"song_ids\": [\n   159,\n   174,\n   240,\n   281,\n   317\n  ]\n },\n {\n  \"playlist_id\": 375,\n  \"title\": \"Sunset Chill: Songs for Golden Hours\",\n  \"is_public\": true,\n  \"rating\": 0.0,\n  \"like_count\": 1,\n  \"review_count\": 0,\n  \"owner\": {\n   \"name\": \"Lindsey Simpson\",\n   \"email\": \"lindseysimpson@gmail.com\"\n  },\n  \"created_at\": \"2023-02-15T05:06:31\",\n  \"song_ids\": [\n   78,\n   88,\n   133,\n   164,\n   171,\n   190\n  ]\n },\n {\n  \"playlist_id\": 376,\n  \"title\": \"Electro Euphoria: Dance Till Dawn\",\n  \"is_public\": true,\n  \"rating\": 3.0,\n  \"like_count\": 1,\n  \"review_count\": 1,\n  \"owner\": {\n   \"name\": \"Lindsey Simpson\",\n   \"email\": \"lindseysimpson@gmail.com\"\n  },\n  \"created_at\": \"2022-12-05T18:48:06\",\n  \"song_ids\": [\n   70,\n   104,\n   170,\n   194,\n   216\n  ]\n }\n]\n"
+    },
+    {
+      "step": 10,
+      "text": null,
+      "usage": {
+        "completion_tokens": 148,
+        "prompt_tokens": 6525,
+        "total_tokens": 6673,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 3977,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 10,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2xpbmRzZXlzaW1wc29uQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.gIJ1GnGXk5HzmTJ0_c0NVf3FKpDKuvmSQNffuuVnIxQ\\\",\\\"playlist_id\\\":654}\",\"name\":\"spotify__show_playlist\"}",
+      "result": "{\n \"playlist_id\": 654,\n \"title\": \"Road Trip Playlist\",\n \"is_public\": true,\n \"rating\": 0.0,\n \"like_count\": 0,\n \"review_count\": 0,\n \"owner\": {\n  \"name\": \"Lindsey Simpson\",\n  \"email\": \"lindseysimpson@gmail.com\"\n },\n \"created_at\": \"2023-05-18T12:00:00\",\n \"shareable_link\": \"https://spotify.com/playlists/654\",\n \"songs\": [\n  {\n   \"id\": 44,\n   \"title\": \"The Illusion of Eternal Spring\",\n   \"album_id\": 9,\n   \"album_title\": \"Mystical Crescendo\",\n   \"duration\": 198,\n   \"artists\": [\n    {\n     \"id\": 8,\n     \"name\": \"Aria Sterling\"\n    }\n   ]\n  },\n  {\n   \"id\": 55,\n   \"title\": \"Tangled Lies\",\n   \"album_id\": 11,\n   \"album_title\": \"Synaptic Serenity\",\n   \"duration\": 186,\n   \"artists\": [\n    {\n     \"id\": 5,\n     \"name\": \"Ava Morgan\"\n    }\n   ]\n  },\n  {\n   \"id\": 61,\n   \"title\": \"Ocean Eyes\",\n   \"album_id\": 12,\n   \"album_title\": \"Astral Journey\",\n   \"duration\": 271,\n   \"artists\": [\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 67,\n   \"title\": \"The Echoes of a Silent Heart\",\n   \"album_id\": 14,\n   \"album_title\": \"Midnight Serenade\",\n   \"duration\": 240,\n   \"artists\": [\n    {\n     \"id\": 34,\n     \"name\": \"Lily Moon\"\n    },\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 84,\n   \"title\": \"Wilted Petals\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 217,\n   \"artists\": [\n    {\n     \"id\": 1,\n     \"name\": \"Olivia Roberts\"\n    }\n   ]\n  },\n  {\n   \"id\": 113,\n   \"title\": \"Chasing Echoes in the Dark\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 263,\n   \"artists\": [\n    {\n     \"id\": 6,\n     \"name\": \"Seraphina Dawn\"\n    }\n   ]\n  },\n  {\n   \"id\": 116,\n   \"title\": \"Paper Planes\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 232,\n   \"artists\": [\n    {\n     \"id\": 6,\n     \"name\": \"Seraphina Dawn\"\n    }\n   ]\n  },\n  {\n   \"id\": 124,\n   \"title\": \"Drowning Sorrows\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 241,\n   \"artists\": [\n    {\n     \"id\": 8,\n     \"name\": \"Aria Sterling\"\n    }\n   ]\n  },\n  {\n   \"id\": 133,\n   \"title\": \"The Fleeting Joy of Youth\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 275,\n   \"artists\": [\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 134,\n   \"title\": \"Lost in a Sea of Echoes\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 224,\n   \"artists\": [\n    {\n     \"id\": 9,\n     \"name\": \"Zoey James\"\n    }\n   ]\n  },\n  {\n   \"id\": 155,\n   \"title\": \"When the Night Steals Your Name\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 225,\n   \"artists\": [\n    {\n     \"id\": 13,\n     \"name\": \"Luna Starlight\"\n    }\n   ]\n  },\n  {\n   \"id\": 250,\n   \"title\": \"Invisible Chains\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 215,\n   \"artists\": [\n    {\n     \"id\": 25,\n     \"name\": \"Velvet Echo\"\n    }\n   ]\n  },\n  {\n   \"id\": 260,\n   \"title\": \"The Mystery of Your Love\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 300,\n   \"artists\": [\n    {\n     \"id\": 27,\n     \"name\": \"Carter Knight\"\n    }\n   ]\n  },\n  {\n   \"id\": 281,\n   \"title\": \"Serenity in the Rain\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 186,\n   \"artists\": [\n    {\n     \"id\": 30,\n     \"name\": \"Marcus Lane\"\n    }\n   ]\n  },\n  {\n   \"id\": 282,\n   \"title\": \"When All Words Fail Us\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 293,\n   \"artists\": [\n    {\n     \"id\": 30,\n     \"name\": \"Marcus Lane\"\n    }\n   ]\n  },\n  {\n   \"id\": 290,\n   \"title\": \"Whispers in the Wind\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 253,\n   \"artists\": [\n    {\n     \"id\": 31,\n     \"name\": \"Hazel Winter\"\n    }\n   ]\n  },\n  {\n   \"id\": 295,\n   \"title\": \"City of Fallen Angels\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 222,\n   \"artists\": [\n    {\n     \"id\": 31,\n     \"name\": \"Hazel Winter\"\n    }\n   ]\n  },\n  {\n   \"id\": 307,\n   \"title\": \"Fractured\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 297,\n   \"artists\": [\n    {\n     \"id\": 33,\n     \"name\": \"Felix Blackwood\"\n    }\n   ]\n  },\n  {\n   \"id\": 309,\n   \"title\": \"Final Act\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 230,\n   \"artists\": [\n    {\n     \"id\": 34,\n     \"name\": \"Lily Moon\"\n    }\n   ]\n  },\n  {\n   \"id\": 315,\n   \"title\": \"Kaleidoscope Heart\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 232,\n   \"artists\": [\n    {\n     \"id\": 35,\n     \"name\": \"Nova Harmony\"\n    }\n   ]\n  },\n  {\n   \"id\": 319,\n   \"title\": \"Under the Willow\",\n   \"album_id\": null,\n   \"album_title\": null,\n   \"duration\": 290,\n   \"artists\": [\n    {\n     \"id\": 35,\n     \"name\": \"Nova Harmony\"\n    }\n   ]\n  }\n ]\n}\n"
+    },
+    {
+      "step": 11,
+      "text": null,
+      "usage": {
+        "completion_tokens": 296,
+        "prompt_tokens": 8728,
+        "total_tokens": 9024,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 6003,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 11,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__search_songs\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2xpbmRzZXlzaW1wc29uQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.gIJ1GnGXk5HzmTJ0_c0NVf3FKpDKuvmSQNffuuVnIxQ\\\",\\\"query\\\":\\\"Where Shadows Come to Life\\\"}\"}",
+      "result": "Error: unknown parameters ['access_token']. Allowed parameters of spotify__search_songs: ['query', 'page_index', 'page_limit', 'artist_id', 'album_id', 'genre', 'min_release_date', 'max_release_date', 'min_duration', 'max_duration', 'min_rating', 'max_rating', 'min_like_count', 'max_like_count', 'min_play_count', 'max_play_count', 'sort_by']."
+    },
+    {
+      "step": 11,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2xpbmRzZXlzaW1wc29uQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.gIJ1GnGXk5HzmTJ0_c0NVf3FKpDKuvmSQNffuuVnIxQ\\\",\\\"query\\\":\\\"The Enigma of Love\\\"}\",\"name\":\"spotify__search_songs\"}",
+      "result": "Error: unknown parameters ['access_token']. Allowed parameters of spotify__search_songs: ['query', 'page_index', 'page_limit', 'artist_id', 'album_id', 'genre', 'min_release_date', 'max_release_date', 'min_duration', 'max_duration', 'min_rating', 'max_rating', 'min_like_count', 'max_like_count', 'min_play_count', 'max_play_count', 'sort_by']."
+    },
+    {
+      "step": 12,
+      "text": null,
+      "usage": {
+        "completion_tokens": 68,
+        "prompt_tokens": 9271,
+        "total_tokens": 9339,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 6000,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 12,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__search_songs\",\"args\":\"{\\\"query\\\":\\\"Where Shadows Come to Life\\\"}\"}",
+      "result": "[\n {\n  \"song_id\": 83,\n  \"title\": \"Where Shadows Come to Life\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 268,\n  \"artists\": [\n   {\n    \"id\": 1,\n    \"name\": \"Olivia Roberts\"\n   }\n  ],\n  \"release_date\": \"2023-01-16T22:55:35\",\n  \"genre\": \"R&B\",\n  \"play_count\": 345,\n  \"rating\": 2.0,\n  \"like_count\": 4,\n  \"review_count\": 1,\n  \"shareable_link\": \"https://spotify.com/songs/83\"\n },\n {\n  \"song_id\": 168,\n  \"title\": \"Where Echoes Go to Die\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 236,\n  \"artists\": [\n   {\n    \"id\": 14,\n    \"name\": \"Grace Harrison\"\n   }\n  ],\n  \"release_date\": \"2022-06-01T13:34:28\",\n  \"genre\": \"classical\",\n  \"play_count\": 678,\n  \"rating\": 3.0,\n  \"like_count\": 6,\n  \"review_count\": 1,\n  \"shareable_link\": \"https://spotify.com/songs/168\"\n },\n {\n  \"song_id\": 230,\n  \"title\": \"The Mirage of a Perfect Life\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 206,\n  \"artists\": [\n   {\n    \"id\": 23,\n    \"name\": \"Soulful Reverie\"\n   }\n  ],\n  \"release_date\": \"2020-11-06T10:00:03\",\n  \"genre\": \"R&B\",\n  \"play_count\": 660,\n  \"rating\": 3.0,\n  \"like_count\": 9,\n  \"review_count\": 1,\n  \"shareable_link\": \"https://spotify.com/songs/230\"\n },\n {\n  \"song_id\": 222,\n  \"title\": \"A Place Where Love Once Lived\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 222,\n  \"artists\": [\n   {\n    \"id\": 22,\n    \"name\": \"Silent Thunder\"\n   }\n  ],\n  \"release_date\": \"2020-04-16T05:32:09\",\n  \"genre\": \"reggae\",\n  \"play_count\": 424,\n  \"rating\": 3.5,\n  \"like_count\": 4,\n  \"review_count\": 2,\n  \"shareable_link\": \"https://spotify.com/songs/222\"\n },\n {\n  \"song_id\": 132,\n  \"title\": \"Shadow Dance\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 210,\n  \"artists\": [\n   {\n    \"id\": 8,\n    \"name\": \"Aria Sterling\"\n   }\n  ],\n  \"release_date\": \"2021-11-27T17:35:00\",\n  \"genre\": \"jazz\",\n  \"play_count\": 688,\n  \"rating\": 0.0,\n  \"like_count\": 6,\n  \"review_count\": 0,\n  \"shareable_link\": \"https://spotify.com/songs/132\"\n }\n]\n"
+    },
+    {
+      "step": 12,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"query\\\":\\\"The Enigma of Love\\\"}\",\"name\":\"spotify__search_songs\"}",
+      "result": "[\n {\n  \"song_id\": 152,\n  \"title\": \"The Enigma of Love\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 190,\n  \"artists\": [\n   {\n    \"id\": 12,\n    \"name\": \"Mia Sullivan\"\n   }\n  ],\n  \"release_date\": \"2022-05-12T02:37:23\",\n  \"genre\": \"classical\",\n  \"play_count\": 367,\n  \"rating\": 0.0,\n  \"like_count\": 3,\n  \"review_count\": 0,\n  \"shareable_link\": \"https://spotify.com/songs/152\"\n },\n {\n  \"song_id\": 93,\n  \"title\": \"The Ephemeral Dance of Love\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 191,\n  \"artists\": [\n   {\n    \"id\": 3,\n    \"name\": \"Jasper Skye\"\n   }\n  ],\n  \"release_date\": \"2019-02-18T10:59:51\",\n  \"genre\": \"EDM\",\n  \"play_count\": 178,\n  \"rating\": 3.0,\n  \"like_count\": 5,\n  \"review_count\": 1,\n  \"shareable_link\": \"https://spotify.com/songs/93\"\n },\n {\n  \"song_id\": 138,\n  \"title\": \"The Inescapable Gravity of Love\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 280,\n  \"artists\": [\n   {\n    \"id\": 10,\n    \"name\": \"Zoe Mitchell\"\n   }\n  ],\n  \"release_date\": \"2019-08-29T00:44:38\",\n  \"genre\": \"classical\",\n  \"play_count\": 193,\n  \"rating\": 5.0,\n  \"like_count\": 6,\n  \"review_count\": 2,\n  \"shareable_link\": \"https://spotify.com/songs/138\"\n },\n {\n  \"song_id\": 167,\n  \"title\": \"The Tragic Beauty of Love\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 190,\n  \"artists\": [\n   {\n    \"id\": 14,\n    \"name\": \"Grace Harrison\"\n   }\n  ],\n  \"release_date\": \"2019-05-19T20:53:31\",\n  \"genre\": \"classical\",\n  \"play_count\": 898,\n  \"rating\": 0.0,\n  \"like_count\": 6,\n  \"review_count\": 0,\n  \"shareable_link\": \"https://spotify.com/songs/167\"\n },\n {\n  \"song_id\": 216,\n  \"title\": \"The Paradox of Our Love\",\n  \"album_id\": null,\n  \"album_title\": null,\n  \"duration\": 215,\n  \"artists\": [\n   {\n    \"id\": 21,\n    \"name\": \"Oceanic Odyssey\"\n   }\n  ],\n  \"release_date\": \"2021-09-15T07:24:22\",\n  \"genre\": \"classical\",\n  \"play_count\": 595,\n  \"rating\": 4.5,\n  \"like_count\": 8,\n  \"review_count\": 2,\n  \"shareable_link\": \"https://spotify.com/songs/216\"\n }\n]\n"
+    },
+    {
+      "step": 13,
+      "text": null,
+      "usage": {
+        "completion_tokens": 52,
+        "prompt_tokens": 11262,
+        "total_tokens": 11314,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 8022,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 13,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__add_song_to_playlist\"}",
+      "result": "{\"name\": \"spotify__add_song_to_playlist\", \"description\": \"Add a song to a playlist.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"playlist_id\": {\"type\": \"integer\", \"description\": \"The playlist id to add the song to.\"}, \"song_id\": {\"type\": \"integer\", \"description\": \"The song id to add.\"}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"playlist_id\", \"song_id\", \"access_token\"]}}"
+    },
+    {
+      "step": 13,
+      "call": "get_func_doc",
+      "args": "{\"name\":\"spotify__remove_song_from_playlist\"}",
+      "result": "{\"name\": \"spotify__remove_song_from_playlist\", \"description\": \"Remove a song from a playlist.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"playlist_id\": {\"type\": \"integer\", \"description\": \"The playlist id to remove the song from.\"}, \"song_id\": {\"type\": \"integer\", \"description\": \"The song id to remove.\"}, \"access_token\": {\"type\": \"string\", \"description\": \"Access token obtained from spotify app login.\"}}, \"required\": [\"playlist_id\", \"song_id\", \"access_token\"]}}"
+    },
+    {
+      "step": 14,
+      "text": null,
+      "usage": {
+        "completion_tokens": 639,
+        "prompt_tokens": 11593,
+        "total_tokens": 12232,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 8015,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 14,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__add_song_to_playlist\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2xpbmRzZXlzaW1wc29uQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.gIJ1GnGXk5HzmTJ0_c0NVf3FKpDKuvmSQNffuuVnIxQ\\\",\\\"playlist_id\\\":654,\\\"song_id\\\":83}\"}",
+      "result": "{\"message\": \"Song added to the playlist.\"}\n"
+    },
+    {
+      "step": 14,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2xpbmRzZXlzaW1wc29uQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.gIJ1GnGXk5HzmTJ0_c0NVf3FKpDKuvmSQNffuuVnIxQ\\\",\\\"playlist_id\\\":654,\\\"song_id\\\":116}\",\"name\":\"spotify__remove_song_from_playlist\"}",
+      "result": "{\"message\": \"Song removed from playlist.\"}\n"
+    },
+    {
+      "step": 14,
+      "call": "call_function",
+      "args": "{\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2xpbmRzZXlzaW1wc29uQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.gIJ1GnGXk5HzmTJ0_c0NVf3FKpDKuvmSQNffuuVnIxQ\\\",\\\"playlist_id\\\":654,\\\"song_id\\\":152}\",\"name\":\"spotify__add_song_to_playlist\"}",
+      "result": "{\"message\": \"Song added to the playlist.\"}\n"
+    },
+    {
+      "step": 14,
+      "call": "call_function",
+      "args": "{\"name\":\"spotify__remove_song_from_playlist\",\"args\":\"{\\\"access_token\\\":\\\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90aWZ5K2xpbmRzZXlzaW1wc29uQGdtYWlsLmNvbSIsImV4cCI6MTY4NDQxMjA5OH0.gIJ1GnGXk5HzmTJ0_c0NVf3FKpDKuvmSQNffuuVnIxQ\\\",\\\"playlist_id\\\":654,\\\"song_id\\\":295}\"}",
+      "result": "{\"message\": \"Song removed from playlist.\"}\n"
+    },
+    {
+      "step": 15,
+      "text": null,
+      "usage": {
+        "completion_tokens": 28,
+        "prompt_tokens": 12327,
+        "total_tokens": 12355,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 10007,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 15,
+      "call": "call_function",
+      "args": "{\"name\":\"supervisor__show_active_task\",\"args\":\"{}\"}",
+      "result": "{\n \"instruction\": \"My roommates and I are preparing a playlist for a roadtrip together. I prepared the initial playlist on Spotify and shared it with them on phone messages. They have replied with suggested changes. Please update this playlist accordingly.\",\n \"status\": null,\n \"answer\": \"<<NOT_GIVEN>>\"\n}\n"
+    },
+    {
+      "step": 16,
+      "text": null,
+      "usage": {
+        "completion_tokens": 45,
+        "prompt_tokens": 12437,
+        "total_tokens": 12482,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 10001,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "step": 16,
+      "call": "call_function",
+      "args": "{\"name\":\"supervisor__complete_task\",\"args\":\"{\\\"answer\\\":\\\"Successfully updated the road trip playlist with the suggested additions and removals from the roommates.\\\"}\"}",
+      "result": "{\"message\": \"Marked the active task complete.\"}\n"
+    }
+  ],
+  "success": false,
+  "failures": [
+    {
+      "requirement": "assert answers match.",
+      "trace": "```python\nwith test(\n    \"\"\"\n    assert answers match.\n    \"\"\"\n):\n    test.answer(predicted_answer, ground_truth_answer)\n```\n----------\nAssertionError:\n'successfully updated the road trip playlist with the suggested additions and removals from the roommates.'\n==\n'null'",
+      "label": "no_op_fail"
+    }
+  ]
+}
